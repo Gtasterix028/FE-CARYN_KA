@@ -17,7 +17,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-import cartechlogo2 from "/cars/cartechlogo2.png";
+import cartechlogo2 from "/cars/cartechlogo3.png";
 export function LoginCard() {
   const [formStateData, setFormStateData] = useState({
     username: "",
@@ -84,6 +84,7 @@ export function LoginCard() {
       <div className=" flex text-blue-gray-900 cursor-pointer font-bold text-2xl gap-2  ">
       <img
             src={cartechlogo2}
+            
             alt="logo"
             className="  w-12 lg:w-[70px] lg:h-[64px] "
           />

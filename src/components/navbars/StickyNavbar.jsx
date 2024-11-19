@@ -359,7 +359,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/admin"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -376,7 +376,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/inspector"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -391,7 +391,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/admin/salesuser"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -413,7 +413,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === `/inspector/car`
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -428,7 +428,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === `/inspector/user/cars`
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -450,7 +450,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/sales/salesDealers"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -465,7 +465,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === `/Seller/UserRequest`
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -488,9 +488,9 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/carlist"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
-          }hover:bg-indigo-400`}
+          }hover:bg-indigo-400 `}
           onClick={handleMenuItemClick}
         >
           Buy Car
@@ -505,7 +505,7 @@ function ConfermListMenu() {
           className={`p-3 rounded-md font-normal ${
             window.location.pathname ===
             `/dealer/B2B`
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -521,7 +521,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/dealer/live/cars"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
           onClick={handleMenuItemClick}
@@ -549,7 +549,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/sellcarlist"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
         >
@@ -564,7 +564,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/pendinrequest"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
         >
@@ -600,7 +600,7 @@ function ConfermListMenu() {
           className={`p-3 rounded-md font-normal ${
             window.location.pathname ===
             `/dealer/${jwtDecodes?.userId}/booking/confirm`
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           }hover:bg-indigo-400`}
         >
@@ -634,7 +634,7 @@ function ConfermListMenu() {
           variant="small"
           color="white"
           className={`p-3 rounded-md font-normal ${
-            window.location.pathname === "/" ? "bg-[#5e67c7] text-white" : ""
+            window.location.pathname === "/" ? "bg-[#] text-white" : ""
           } hover:bg-indigo-400 `}
           onClick={handleMenuItemClick}
         >
@@ -649,7 +649,7 @@ function ConfermListMenu() {
           color="white"
           className={`p-3 rounded-md font-normal ${
             window.location.pathname === "/premiumcars"
-              ? "bg-[#5e67c7] text-white"
+              ? "bg-[#] text-white"
               : ""
           } hover:bg-indigo-400 `}
           onClick={handleMenuItemClick}
@@ -669,7 +669,7 @@ function ConfermListMenu() {
               color="white"
               className={`p-3 rounded-md font-normal ${
                 window.location.pathname === "/carlist"
-                  ? "bg-[#5e67c7] text-white"
+                  ? "bg-[#] text-white"
                   : ""
               }hover:bg-indigo-400 `}
               onClick={handleMenuItemClick}
@@ -684,7 +684,7 @@ function ConfermListMenu() {
               color="white"
               className={`p-3 rounded-md font-normal ${
                 window.location.pathname === "/dealer/live/cars"
-                  ? "bg-[#5e67c7] text-white"
+                  ? "bg-[#] text-white"
                   : ""
               }hover:bg-indigo-400`}
               onClick={handleMenuItemClick}
@@ -703,7 +703,7 @@ function ConfermListMenu() {
   );
 
   return (
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-[#8a90d4] border-none">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-[#19376D] border-none">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Link to={"/"}>
           {/* <Typography className="mr-4 cursor-pointer py-1.5 font-bold text-2xl ">
@@ -735,7 +735,7 @@ function ConfermListMenu() {
                   <Button
                     variant="text"
                     size="sm"
-                    className="hidden lg:inline-block text-white"
+                    className="hidden lg:inline-block  bg-lime-300 text-deep-purple-200"
                   >
                     <span>Sign In</span>
                   </Button>
@@ -745,7 +745,7 @@ function ConfermListMenu() {
                   <Button
                     variant="gradient"
                     size="sm"
-                    color="indigo"
+                    color="lime"
                     className="hidden lg:inline-block bg-indigo-400"
                   >
                     <span>Sign Up</span>
@@ -808,7 +808,7 @@ function ConfermListMenu() {
             <Link to="/signup">
               <Button
                 fullWidth
-                color="indigo"
+                color="#"
                 variant="gradient"
                 size="sm"
                 className=""

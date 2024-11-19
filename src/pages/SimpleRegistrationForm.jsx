@@ -8,7 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import cartechlogo2 from "/cars/cartechlogo2.png";
+import cartechlogo2 from "/cars/cartechlogo3.png";
 export function SimpleRegistrationForm() {
   const [SignUp] = useSignUpMutation();
   const navigate = useNavigate();

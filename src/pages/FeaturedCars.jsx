@@ -14,7 +14,7 @@ const FeaturedCars = ({ data, error }) => {
   }, [data, error]);
   return (
     <>
-    <div className="text-3xl font-bold p-10 font-[latto]">Recently Added Cars</div>
+    <div className="text-3xl font-bold p-10 font-[oswald]">Recently Added Cars</div>
         <div className="w-full lg:pl-0 ">
           <div className="md:grid md:grid-cols-4 mx-2">
             

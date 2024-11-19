@@ -6,6 +6,8 @@ export default withMT({
     extend: {
       fontFamily: {
         latto: ["Latto", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
         Merriweather: ["Merriweather", "sans-serif"],
       },
       keyframes: {
