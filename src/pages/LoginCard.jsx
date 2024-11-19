@@ -219,7 +219,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-import cartechlogo2 from '../../public/cars/cartechlogo2.png'; // Import the logo from the src folder
+// import cartechlogo2 from '../../public/cars/cartechlogo2.png'; // Import the logo from the src folder
 import backgroundImage from '../../public/cars/Bg3.jpg'; // Import the background image from the cars folder
 import FacebookIcon from '@mui/icons-material/Facebook'; // Import Facebook icon
 import GoogleIcon from '@mui/icons-material/Google';
@@ -315,7 +315,7 @@ const LoginCard = () => {
       />
       <ToastContainer autoClose={2000} />
 
-      {/* Logo Image */}
+      {/* Logo Image
       <img
         src={cartechlogo2}
         alt="Car Tech Logo"
@@ -327,7 +327,7 @@ const LoginCard = () => {
           zIndex: 1, // Ensure it appears above the overlay
           width: "150px", // Adjust the width as needed
         }}
-      />
+      /> */}
 
       {/* Wrap the Card inside a Box */}
       <Box

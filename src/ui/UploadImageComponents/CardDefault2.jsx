@@ -37,15 +37,15 @@ export function CardDefault2({ data }) {
         
         
           <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
-  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black">
     <DriveEtaIcon className="mr-1"  style={{ color: "#F96E2A" }}/> {/* KM Driven Icon */}
     {data.kmDriven} KM
   </span>
-  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black">
     <LocalGasStationIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Fuel Type Icon */}
     {data.fuelType}
   </span>
-  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black">
     <TransmissionIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Transmission Icon */}
     {data.transmission}
   </span>

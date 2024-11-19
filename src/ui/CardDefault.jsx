@@ -18,7 +18,9 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavoriteCar, removeFavoriteCar } from "../pages/favoritesSlice";
-
+import DriveEtaIcon from '@mui/icons-material/DriveEta'; // Example icon for KM
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation'; // Example icon for fuel type
+import TransmissionIcon from '@mui/icons-material/Settings'; // Example icon for transmission (you can choose a better one)
 function RatedIcon() {
   return (
     <svg
@@ -146,17 +148,20 @@ export function CardDefault({ data, Carid, refetch }) {
             <Typography variant="h6" color="blue-gray" className="mb-2">
               {data.title}
             </Typography>
-            <p className="text-sm uppercase mb-3 flex-wrap gap-2">
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.kmDriven}KM
-              </span>
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.fuelType}
-              </span>
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.transmission}
-              </span>
-            </p>
+            <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
+  <span className="flex items-center p-[5px] rounded-sm text-black">
+    <DriveEtaIcon className="mr-1"  style={{ color: "#F96E2A" }}/> {/* KM Driven Icon */}
+    {data.kmDriven} KM
+  </span>
+  <span className="flex items-center p-[5px] rounded-sm text-black">
+    <LocalGasStationIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Fuel Type Icon */}
+    {data.fuelType}
+  </span>
+  <span className="flex items-center p-[5px] rounded-sm text-black">
+    <TransmissionIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Transmission Icon */}
+    {data.transmission}
+  </span>
+</p>
             <Typography variant="h6" className="font-bold text-black text-xl">
               ₹ {data.price}
             </Typography>
@@ -166,7 +171,7 @@ export function CardDefault({ data, Carid, refetch }) {
             </button>
           </Link> */}
             <hr />
-            <p className="text-sm">Free Test Drive Today at {data.area}</p>
+            <p className="text-sm text-purple-500">Free Test Drive Today at {data.area}</p>
          
         </CardBody>
       </Card>
