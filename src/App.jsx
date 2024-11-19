@@ -3,7 +3,7 @@ import { Routes, Route, Router } from "react-router-dom";
 import { FavoriteProvider } from "./ui/FavoriteContext";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
-import { LoginCard } from "./pages/LoginCard";
+import LoginCard  from "./pages/LoginCard";
 import { SimpleRegistrationForm } from "./pages/SimpleRegistrationForm";
 
 import BuyCar from "./pages/BuyCar";
