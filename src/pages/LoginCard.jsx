@@ -346,8 +346,8 @@ const LoginCard = () => {
               padding: "20px", // Optional: add some padding
 
               border: '2px solid rgba(255, 255, 255, 0.8)', // Set the border color and width
-              backdropFilter: 'blur(10px)', // Adjust the blur radius as needed
-              WebkitBackdropFilter: 'blur(10px)',
+               backdropFilter: 'blur(10px)', // Adjust the blur radius as needed
+    WebkitBackdropFilter: 'blur(10px)',
               // Set background to transparent
 
         }}>

@@ -277,19 +277,320 @@
 
 
 
+// import { useState } from "react";
+// import { Button, Checkbox, Typography } from "@material-tailwind/react";
+// import { useCountries } from "use-react-countries";
+// import { Menu, MenuHandler, MenuList, MenuItem, Card, } from "@material-tailwind/react";
+// import { Link } from "react-router-dom";
+// import { useSignUpMutation } from "../services/authAPI";
+// import { toast, ToastContainer } from 'react-toastify';
+// import { useNavigate } from "react-router-dom";
+// import { Formik, Form, Field, ErrorMessage } from "formik";
+// import * as Yup from "yup";
+// // import cartechlogo2 from "../../public/cars/cartechlogo2.png";
+// import backgroundImage from "../../public/cars/Bg3.jpg"; // Path to your background image
+// // import { StickyNavbar } from "../components/navbars/StickyNavbar";
+
+// export function SimpleRegistrationForm() {
+//   const [SignUp] = useSignUpMutation();
+//   const navigate = useNavigate();
+//   const { countries } = useCountries();
+//   const defaultCountryIndex = countries.findIndex(
+//     (country) => country.name === "India"
+//   );
+//   const [country, setCountry] = useState(
+//     defaultCountryIndex !== -1 ? defaultCountryIndex : 0
+//   );
+//   const { name, flags, countryCallingCode } = countries[country];
+
+//   const validationSchema = Yup.object().shape({
+//     firstName: Yup.string().required("First name is required"),
+//     lastName: Yup.string().required("Last name is required"),
+//     email: Yup.string().email("Invalid email address").required("Email is required"),
+//     mobileNo: Yup.string()
+//       .matches(/^\d{10}$/, "Mobile number must be 10 digits")
+//       .required("Mobile number is required"),
+//     password: Yup.string().required("Password is required"),
+//     address: Yup.string().required("Address is required"),
+//     city: Yup.string().required("City is required"),
+//     area: Yup.string().required("Area is required"),
+//     status: Yup.boolean().oneOf([true], "You must accept the terms and conditions"),
+//   });
+
+//   const handleSubmit = async (values, { setSubmitting }) => {
+//     try {
+//       const { data, error } = await SignUp(values);
+//       if (error?.status === 400) {
+//         toast.error(error?.data?.message);
+//       } else {
+//         toast.success(data?.message);
+//         setTimeout(() => {
+//           navigate("/signin");
+//         }, 1000);
+//       }
+//     } catch (error) {
+//       toast.error("Register Unsuccessfully");
+//     }
+//     setSubmitting(false);
+//   };
+
+//   return (
+// <>
+
+//     {/* <StickyNavbar></StickyNavbar> */}
+//     <div
+//       style={{
+//         backgroundImage: `url(${backgroundImage})`,
+//         backgroundSize: "cover",
+//         backgroundPosition: "center",
+//         height: "100vh",
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//       }}
+//     >
+//       {/* Overlay for opacity */}
+//   <div
+//     style={{
+//       position: "absolute",
+//       top: 0,
+//       left: 0,
+//       right: 0,
+//       bottom: 0,
+//       backgroundColor: "rgba(0, 0, 0, 0.3)", // Adjust the rgba values for desired opacity
+//       zIndex: 1, // Ensure this overlay is above the background
+//     }}
+//   />
+
+//       {/* <div className="md:mt-2 md:ml-8 ml-5">
+//         <Link to={"/"}>
+//           <div className="flex text-blue-gray-900 mr-4 cursor-pointer font-bold text-2xl gap-2 ">
+//             <img
+//               src={cartechlogo2}
+//               alt="logo"
+//               className="w-12 lg:w-[70px] lg:h-[64px]"
+//             />
+//             <span className="mt-3">caryanamindia</span>
+//           </div>
+//         </Link>
+//       </div> */}
+//       <div className="h-auto mt-10 flex justify-center items-center">
+//         <Card className="p-5 border border-blue-400 shadow-m shadow-black" style={{ width: "600px", margin: "10px auto 0", // Increased top margin to 40px
+//  // 20px top margin, auto left/right, 0 bottom margin
+//  textAlign: "center" ,
+//               backgroundColor: 'transparent', 
+//               borderRadius: "20px", // Optional: add border radius for rounded corners
+//               padding: "10px", // Optional: add some padding
+//               backdropFilter: 'blur(10px)', // Adjust the blur radius as needed
+//               WebkitBackdropFilter: 'blur(10px)',
+//               border: '2px solid rgba(255, 255, 255,0.5)', // Set the border color and width
+//               // Set background to transparent
+
+//         }}>
+//           <ToastContainer />
+        
+//             <Typography variant="h3" color="white">
+//               Sign Up
+//             </Typography>
+            
+
+//           <Formik
+//             initialValues={{
+//               email: "",
+//               password: "",
+//               mobileNo: "",
+//               firstName: "",
+//               lastName: "",
+//               address: "",
+//               city: "",
+//               area: "",
+//               status: false,
+//             }}
+//             validationSchema={validationSchema}
+//             onSubmit={handleSubmit}
+//           >
+//             {({ isSubmitting }) => (
+//               <Form className="mt-2 mb-2 w-full max-w-screen-lg sm:w-full md:w-full">
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h 6" color="white" className="mb-1">
+//                       First Name
+//                     </Typography>
+//                     <Field
+//                       name="firstName"
+//                       type="text"
+//                       placeholder="Enter your first name"
+//                       className="border border-gray-400 rounded-md h-10 p-2 bg-transparent focus:bg-orange-100"
+//                     />
+//                     <ErrorMessage name="firstName" component="span" className="text-red-500 mt-1" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       Last Name
+//                     </Typography>
+//                     <Field name="lastName" type="text" placeholder="Enter your last name" className="border border-gray-400 rounded-md h-10 p-2 bg-transparent" />
+//                     <ErrorMessage name="lastName" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       Email
+//                     </Typography>
+//                     <Field name="email" type="email" placeholder="Email" className="border border-gray-400 rounded-md h-10 p-2 bg-transparent" />
+//                     <ErrorMessage name="email" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       Mobile Number
+//                     </Typography>
+//                     <div className="relative flex w-full max-w-[24rem]">
+//                       <Menu placement="bottom-start">
+//                         <MenuHandler>
+//                           <Button
+//                             ripple={false}
+//                             variant="text"
+//                             color="blue-gray"
+//                             className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-blue-gray-200 bg-blue-gray-500/10 pl-3"
+//                           >
+//                             <img
+//                               src={flags.svg}
+//                               alt={name}
+//                               className="h-4 w-4 rounded-full object-cover"
+//                             />
+//                             {countryCallingCode}
+//                           </Button>
+//                         </MenuHandler>
+//                         <MenuList className="max-h-[20rem] max-w-[18rem]">
+//                           {countries.map(({ name, flags, countryCallingCode }, index) => (
+//                             <MenuItem
+//                               key={name}
+//                               value={name}
+//                               className="flex items-center gap-2"
+//                               onClick={() => setCountry(index)}
+//                             >
+//                               <img
+//                                 src={flags.svg}
+//                                 alt={name}
+//                                 className="h-5 w-5 rounded-full object-cover"
+//                               />
+//                               {name} <span className="ml-auto">{countryCallingCode}</span>
+//                             </MenuItem>
+//                           ))}
+//                         </MenuList>
+//                       </Menu>
+//                       <Field
+//                         name="mobileNo"
+//                         type="text"
+//                         placeholder="Mobile Number"
+//                         className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent"
+//                       />
+//                     </div>
+//                     <ErrorMessage name="mobileNo" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       Password
+//                     </Typography>
+//                     <Field name="password" type="password" placeholder="Password" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
+//                     <ErrorMessage name="password" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       Address
+//                     </Typography>
+//                     <Field name="address" placeholder="Address" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
+//                     <ErrorMessage name="address" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color="blue-gray" className="mb-1">
+//                       City
+//                     </Typography>
+//                     <Field name="city" placeholder="City" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
+//                     <ErrorMessage name="city" component="div" className="text-red-500" />
+//                   </div>
+
+//                   <div className="flex flex-col gap-2">
+//                     <Typography variant="h6" color ="lime" className="mb-1">
+//                       Area
+//                     </Typography>
+//                     <Field name="area" placeholder="Area" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
+//                     <ErrorMessage name="area" component="div" className="text-red-500" />
+//                   </div>
+//                 </div>
+
+//                 <div className="ml-4 mt-4">
+//                   <Field name="status" type="checkbox">
+//                     {({ field }) => (
+//                       <Checkbox
+//                         label={
+//                           <Typography
+//                             variant="small"
+//                             color="white"
+//                             className="flex items-center font-normal"
+//                           >
+//                             I agree to the
+//                             <Link
+//                               to="#"
+//                               className="font-medium transition-colors hover:text-gray-900"
+//                             >
+//                               &nbsp;Terms and Conditions
+//                             </Link>
+//                           </Typography>
+//                         }
+//                         containerProps={{ className: "-ml-2.5" }}
+//                         {...field}
+//                       />
+//                     )}
+//                   </Field>
+//                   <ErrorMessage name="status" component="div" className="text-red-500" />
+//                 </div>
+
+//                 <div className="flex justify-center mt-6">
+//                   <Button className="w-full bg-[#8a90d4]" fullWidth type="submit" disabled={isSubmitting}>
+//                     Sign Up
+//                   </Button>
+//                 </div>
+
+//                 <Typography color="white" className="mt-4 text-center font-normal">
+//                   Already have an account?{" "}
+//                   <Link to="/signin" className="font-medium text-gray-900">
+//                     Sign In
+//                   </Link>
+//                 </Typography>
+//               </Form>
+//             )}
+//           </Formik>
+//         </Card>
+//       </div>
+//     </div>
+//     </>
+//   );
+// }
+
+// export default SimpleRegistrationForm;
+
+
+
+
+
 import { useState } from "react";
 import { Button, Checkbox, Typography } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
-import { Menu, MenuHandler, MenuList, MenuItem, Card, } from "@material-tailwind/react";
+import { Menu, MenuHandler, MenuList, MenuItem, Card } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { useSignUpMutation } from "../services/authAPI";
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-// import cartechlogo2 from "../../public/cars/cartechlogo2.png";
 import backgroundImage from "../../public/cars/Bg3.jpg"; // Path to your background image
-// import { StickyNavbar } from "../components/navbars/StickyNavbar";
+import { StickyNavbar } from "../components/navbars/StickyNavbar";
+import cartechlogo2 from '../../public/cars/cartechlogo2.png'; // Import the logo from the src folder
 
 export function SimpleRegistrationForm() {
   const [SignUp] = useSignUpMutation();
@@ -335,64 +636,54 @@ export function SimpleRegistrationForm() {
   };
 
   return (
-<>
-
-    {/* <StickyNavbar></StickyNavbar> */}
-    <div
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {/* Overlay for opacity */}
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.3)", // Adjust the rgba values for desired opacity
-      zIndex: 1, // Ensure this overlay is above the background
-    }}
-  />
-
-      {/* <div className="md:mt-2 md:ml-8 ml-5">
-        <Link to={"/"}>
-          <div className="flex text-blue-gray-900 mr-4 cursor-pointer font-bold text-2xl gap-2 ">
-            <img
-              src={cartechlogo2}
-              alt="logo"
-              className="w-12 lg:w-[70px] lg:h-[64px]"
-            />
-            <span className="mt-3">caryanamindia</span>
-          </div>
-        </Link>
-      </div> */}
-      <div className="h-auto mt-10 flex justify-center items-center">
-        <Card className="p-5 border border-blue-400 shadow-m shadow-black" style={{ width: "600px", margin: "10px auto 0", // Increased top margin to 40px
- // 20px top margin, auto left/right, 0 bottom margin
- textAlign: "center" ,
-              backgroundColor: 'transparent', 
-              borderRadius: "20px", // Optional: add border radius for rounded corners
-              padding: "10px", // Optional: add some padding
-              backdropFilter: 'blur(10px)', // Adjust the blur radius as needed
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '2px solid rgba(255, 255, 255,0.5)', // Set the border color and width
-              // Set background to transparent
-
-        }}>
-          <ToastContainer />
+    <>
+    <StickyNavbar></StickyNavbar>
+      <div
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative"
+        }}
+      >
+        {/* Overlay for opacity */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust the rgba values for desired opacity
+            zIndex: 1, // Ensure this overlay is above the background
+          }}
+        />
         
-            <Typography variant="h3" color="white">
-              Sign Up
-            </Typography>
-            
+      {/* Logo Image */}
+      <img
+  src={cartechlogo2}
+  alt="Car Tech Logo"
+  style={{
+    position: "absolute",
+    top: "10px", // Adjust the top position as needed
+    left: "50%",
+    transform: "translateX(-50%)", // Center horizontally
+    zIndex: 1, // Ensure it appears above the overlay
+    width: "80px", // Adjust the width as needed (reduced from 80px to 60px)
+    height: "60px", // Maintain aspect ratio
+    marginBottom:"10px"
+  }}
+/>
+        
+        <Card className="p-4 border border-blue-400 shadow-lg" style={{ width: "600px", zIndex: 2, borderRadius: "20px", backgroundColor: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(10px)' }}>
+          <ToastContainer />
+          <Typography variant="h4" color="white" className="text-center mb-4">
+            Sign Up
+          </Typography>
 
           <Formik
             initialValues={{
@@ -407,42 +698,52 @@ export function SimpleRegistrationForm() {
               status: false,
             }}
             validationSchema={validationSchema}
-            onSubmit={handleSubmit}
+            onSubmit ={handleSubmit}
           >
             {({ isSubmitting }) => (
-              <Form className="mt-2 mb-2 w-full max-w-screen-lg sm:w-full md:w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h 6" color="white" className="mb-1">
+              <Form className="mt-2 mb-2 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       First Name
                     </Typography>
                     <Field
                       name="firstName"
                       type="text"
                       placeholder="Enter your first name"
-                      className="border border-gray-400 rounded-md h-10 p-2 bg-transparent focus:bg-orange-100"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
                     />
-                    <ErrorMessage name="firstName" component="span" className="text-red-500 mt-1" />
+                    <ErrorMessage name="firstName" component="span" className="text-red-500 mt-1 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Last Name
                     </Typography>
-                    <Field name="lastName" type="text" placeholder="Enter your last name" className="border border-gray-400 rounded-md h-10 p-2 bg-transparent" />
-                    <ErrorMessage name="lastName" component="div" className="text-red-500" />
+                    <Field
+                      name="lastName"
+                      type="text"
+                      placeholder="Enter your last name"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
+                    />
+                    <ErrorMessage name="lastName" component="div" className="text-red-500 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Email
                     </Typography>
-                    <Field name="email" type="email" placeholder="Email" className="border border-gray-400 rounded-md h-10 p-2 bg-transparent" />
-                    <ErrorMessage name="email" component="div" className="text-red-500" />
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
+                    />
+                    <ErrorMessage name="email" component="div" className="text-red-500 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Mobile Number
                     </Typography>
                     <div className="relative flex w-full max-w-[24rem]">
@@ -452,7 +753,7 @@ export function SimpleRegistrationForm() {
                             ripple={false}
                             variant="text"
                             color="blue-gray"
-                            className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-blue-gray-200 bg-blue-gray-500/10 pl-3"
+                            className="flex h-8 items-center gap-2 rounded-r-none border border-r-0 border-blue-gray-200 bg-blue-gray-500/10 pl-2"
                           >
                             <img
                               src={flags.svg}
@@ -484,46 +785,63 @@ export function SimpleRegistrationForm() {
                         name="mobileNo"
                         type="text"
                         placeholder="Mobile Number"
-                        className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent"
+                        className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
                       />
                     </div>
-                    <ErrorMessage name="mobileNo" component="div" className="text-red-500" />
+                    <ErrorMessage name="mobileNo" component="div" className="text-red-500 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Password
                     </Typography>
-                    <Field name="password" type="password" placeholder="Password" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
-                    <ErrorMessage name="password" component="div" className="text-red-500" />
+                    <Field
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                    />
+                    <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Address
                     </Typography>
-                    <Field name="address" placeholder="Address" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
-                    <ErrorMessage name="address" component="div" className="text-red-500" />
-                  </div>
+                    <Field
+                      name="address"
+                      placeholder="Address"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                    />
+                    <ErrorMessage name="address" component="div" className="text-red-500 text-xs" />
+                    </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       City
                     </Typography>
-                    <Field name="city" placeholder="City" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
-                    <ErrorMessage name="city" component="div" className="text-red-500" />
+                    <Field
+                      name="city"
+                      placeholder="City"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                    />
+                    <ErrorMessage name="city" component="div" className="text-red-500 text-xs" />
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <Typography variant="h6" color ="lime" className="mb-1">
+                  <div className="flex flex-col gap-1">
+                    <Typography variant="h6" color="white" className="mb-1 text-sm">
                       Area
                     </Typography>
-                    <Field name="area" placeholder="Area" className="border border-gray-400 rounded-md h-10 p-2 w-full bg-transparent" />
-                    <ErrorMessage name="area" component="div" className="text-red-500" />
+                    <Field
+                      name="area"
+                      placeholder="Area"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                    />
+                    <ErrorMessage name="area" component="div" className="text-red-500 text-xs" />
                   </div>
                 </div>
 
-                <div className="ml-4 mt-4">
+                <div className="ml-4 mt-2">
                   <Field name="status" type="checkbox">
                     {({ field }) => (
                       <Checkbox
@@ -531,7 +849,7 @@ export function SimpleRegistrationForm() {
                           <Typography
                             variant="small"
                             color="white"
-                            className="flex items-center font-normal"
+                            className="flex items-center font-normal text-xs"
                           >
                             I agree to the
                             <Link
@@ -547,16 +865,16 @@ export function SimpleRegistrationForm() {
                       />
                     )}
                   </Field>
-                  <ErrorMessage name="status" component="div" className="text-red-500" />
+                  <ErrorMessage name="status" component="div" className="text-red-500 text-xs" />
                 </div>
 
-                <div className="flex justify-center mt-6">
-                  <Button className="w-full bg-[#8a90d4]" fullWidth type="submit" disabled={isSubmitting}>
-                    Sign Up
+                <div className="flex justify-center mt-4">
+                  <Button className="w-full bg-[#3a45b4]" fullWidth type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Signing Up..." : "Sign Up"}
                   </Button>
                 </div>
 
-                <Typography color="white" className="mt-4 text-center font-normal">
+                <Typography color="white" className="mt-2 text-center font-normal text-xs">
                   Already have an account?{" "}
                   <Link to="/signin" className="font-medium text-gray-900">
                     Sign In
@@ -567,7 +885,6 @@ export function SimpleRegistrationForm() {
           </Formik>
         </Card>
       </div>
-    </div>
     </>
   );
 }
