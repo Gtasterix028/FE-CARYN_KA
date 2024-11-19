@@ -234,10 +234,9 @@
 
 
 
-// import  { useState } from 'react';
-// import { Card, CardMedia,  IconButton } from '@mui/material';
-// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+
+// import { Card, CardMedia, Grid,Typography } from '@mui/material';
 
 // // Import your images
 // import bmw from "/carslogo/bmw.png";
@@ -248,7 +247,12 @@
 // import suzuki from "/carslogo/suzuki.png";
 // import tata from "/carslogo/tata (1).png";
 // import volkswagen from "/carslogo/volkswagen.png";
-// import volvo from "/carslogo/volvo.png";
+// import volvo from "/carlogo/volvo.png";
+
+// import audi from "/carlogo/audi.png";
+// import landrover from "/carlogo/landrover.jpg";
+// import jaguar from "/carlogo/Jaguar.png";
+
 
 // const brands = [
 //   { id: 1, img: bmw, alt: "BMW" },
@@ -260,72 +264,61 @@
 //   { id: 7, img: tata, alt: "Tata" },
 //   { id: 8, img: volkswagen, alt: "Volkswagen" },
 //   { id: 9, img: volvo, alt: "Volvo" },
+//   { id: 10, img: audi, alt: "audi" },
+//   { id: 11, img: landrover, alt: "landrover" },
+//   { id: 12, img: jaguar, alt: "jaguar" },
 // ];
 
 // const BrandList = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const itemsToShow = 6; // Number of items to show at once
-
-//   const nextBrands = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex + 1) % brands.length);
-//   };
-
-//   const prevBrands = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex - 1 + brands.length) % brands.length);
-//   };
-
 //   return (
-//     <div style={{ display: 'flex', alignItems: 'center', width: '100%', padding: '20px 20px' }}>
-//       <IconButton onClick={prevBrands} color="primary">
-//         <ArrowBackIcon />
-//       </IconButton>
-      
-//       <div style={{ overflow: 'hidden', width: '100%' }}>
-//         <div style={{
-//           display: 'flex',
-//           transition: 'transform 0.5s ease',
-//           transform: `translateX(-${(currentIndex) * (100 / itemsToShow)}%)`,
-//         }}>
-//           {brands.map((brand) => (
-//             <div key={brand.id} style={{ flex: '0 0 auto', width: `${100 / itemsToShow}%` }}>
-//               <Card 
-//                sx={{
-//                 width: '60%',
+    
+//     <Grid container spacing={2} style={{ padding: '20px' }}>
+//       {brands.map((brand) => (
+//         <Grid item xs={12} sm={4} md={3} lg={3} key={brand.id}> {/* Adjust xs value to control how many images per row */}
+//           <Card sx={{
+//                 width: '250px',
+//                 height: '100px',
+//                 objectFit: 'cover',
+               
+
+//               }}>
+//             <CardMedia
+//               component="img"
+//               alt={brand.alt}
+//               image={brand.img}
+//               sx={{
+//                 width: '100%',
 //                 height: '80px',
 //                 objectFit: 'contain',
-//                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Add box shadow here
-//               }}>
+//                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Add box shadow here,
+               
 
-//                 <CardMedia
-//                   component="img"
-//                   alt={brand.alt}
-//                   image={brand.img}
-//                   sx={{
-//                     width: '100%',
-//                     height: '80px',
-//                     objectFit: 'contain',
-//                     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Add box shadow here
-//                   }}
-                 
-//                 />
-//               </Card>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-      
-//       <IconButton onClick={nextBrands} color="primary">
-//         <ArrowForwardIcon />
-//       </IconButton>
-//     </div>
+//               }}
+//             />
+//             {/* <span> {brand.alt}</span> */}
+//             <Typography
+//   variant="body2"
+//   align="center"
+//   style={{
+//     padding: '4px',
+//     fontFamily: 'Roboto, sans-serif', // Use Roboto font
+//     color: '#000', // Set text color to black
+//     textTransform: 'uppercase', // Optional: make the text uppercase
+//     textShadow: 'none', // Ensure no text shadow is applied
+//   }}
+// >
+//   {brand.alt}
+// </Typography>
+//           </Card>
+//         </Grid>
+//       ))}
+//     </Grid>
 //   );
 // };
 
 // export default BrandList;
 
-
-
-import { Card, CardMedia, Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 // Import your images
 import bmw from "/carslogo/bmw.png";
@@ -336,7 +329,10 @@ import mercedes from "/carslogo/mercedes.png";
 import suzuki from "/carslogo/suzuki.png";
 import tata from "/carslogo/tata (1).png";
 import volkswagen from "/carslogo/volkswagen.png";
-import volvo from "/carslogo/volvo.png";
+import volvo from "/carlogo/volvo.png";
+import audi from "/carlogo/audi.png";
+import landrover from "/carlogo/landrover.jpg";
+import jaguar from "/carlogo/Jaguar.png";
 
 const brands = [
   { id: 1, img: bmw, alt: "BMW" },
@@ -348,26 +344,50 @@ const brands = [
   { id: 7, img: tata, alt: "Tata" },
   { id: 8, img: volkswagen, alt: "Volkswagen" },
   { id: 9, img: volvo, alt: "Volvo" },
+  { id: 10, img: audi, alt: "Audi" },
+  { id: 11, img: landrover, alt: "Land Rover" },
+  { id: 12, img: jaguar, alt: "Jaguar" },
 ];
 
 const BrandList = () => {
   return (
-    <Grid container spacing={2} style={{ padding: '20px' }}>
+    <Grid container spacing={2} style={{ padding: '10px' }}> {/* Reduced padding */}
       {brands.map((brand) => (
-        <Grid item xs={3} key={brand.id}> {/* Adjust xs value to control how many images per row */}
-          <Card>
-            <CardMedia
-              component="img"
+        <Grid item xs={12} sm={6} md={4} lg={3} key={brand.id}> {/* Adjusted xs and sm values for smaller sizes */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '8px', // Reduced padding
+            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)', // Reduced box shadow
+            borderRadius: '8px',
+            backgroundColor: '#fff',
+          }}>
+            <img
+              src={brand.img}
               alt={brand.alt}
-              image={brand.img}
-              sx={{
-                width: '100%',
-                height: '80px',
+              style={{
+                width: '20%', // Set width to 80% for smaller size
+                height: 'auto',
                 objectFit: 'contain',
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Add box shadow here
               }}
             />
-          </Card>
+            <Typography
+              variant="body2"
+              align="center"
+              style={{
+                padding: '2px', // Reduced padding
+                fontFamily: 'Roboto, sans-serif',
+                color: '#000',
+                textTransform: 'uppercase',
+                textShadow: 'none',
+                fontSize: '0.8rem', // Reduced font size
+              }}
+            >
+              {brand.alt}
+            </Typography>
+          </div>
         </Grid>
       ))}
     </Grid>

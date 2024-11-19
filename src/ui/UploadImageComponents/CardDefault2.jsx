@@ -3,7 +3,9 @@ import {  Card, CardBody, Typography, CardHeader } from "@material-tailwind/reac
 import { CarouselCustomArrows } from "../CarouselCustomArrows";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import DriveEtaIcon from '@mui/icons-material/DriveEta'; // Example icon for KM
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation'; // Example icon for fuel type
+import TransmissionIcon from '@mui/icons-material/Settings'; // Example icon for transmission (you can choose a better one)
 export function CardDefault2({ data }) {
   const [isHovered, setIsHovered] = useState(false);
  
@@ -32,17 +34,23 @@ export function CardDefault2({ data }) {
           >
             {isHovered ? data.brand + " " + data.model : truncatedText}
           </Typography>
-          <p className="text-xs font-medium uppercase flex-wrap ">
-            <span className="bg-gray-200 p-[5px] mr-2 rounded-sm text-black">
-              {data.kmDriven} KM
-            </span>
-            <span className="bg-gray-200 p-[5px] mr-2 rounded-sm text-black">
-              {data.fuelType}
-            </span>
-            <span className="bg-gray-200 p-[5px] mr-2 rounded-sm text-black">
-              {data.transmission}
-            </span>
-          </p>
+        
+        
+          <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
+  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+    <DriveEtaIcon className="mr-1"  style={{ color: "#F96E2A" }}/> {/* KM Driven Icon */}
+    {data.kmDriven} KM
+  </span>
+  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+    <LocalGasStationIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Fuel Type Icon */}
+    {data.fuelType}
+  </span>
+  <span className="flex items-center bg-gray-200 p-[5px] rounded-sm text-black">
+    <TransmissionIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Transmission Icon */}
+    {data.transmission}
+  </span>
+</p>
+
           <Typography
             variant="h6"
             className="mt-2 font-bold text-xl text-black"
@@ -55,7 +63,7 @@ export function CardDefault2({ data }) {
           <Button className="mt-2 mb-4 p-[8px] bg-indigo-500 rounded-lg text-white">View Car</Button>
         </Link> */}
           <hr />
-          <p className="text-sm">Free Test Drive Today at {data.area}</p>
+          <p className="text-sm  text-purple-500">Free Test Drive Today at {data.area}</p>
         </Link>
       </CardBody>
     </Card>
