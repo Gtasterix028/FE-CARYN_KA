@@ -125,7 +125,7 @@ const HeroSection = () => {
           {/* </div> */}
           <div className="flex justify-center items-center md:justify-start">
             <Button
-            color="indigo"
+            color="lime"
               onClick={submitHandler}
               className="mt-2 flex items-center gap-2 animate-slidein [--slidein-delay:950ms] opacity-0"
             >
@@ -185,7 +185,7 @@ const HeroSection = () => {
               rental. Enjoy your holiday with us. We make your drive memorable.
             </Typography> */}
             <Button
-             color="indigo"
+             color="lime"
               onClick={submitHandler}
               className="mt-2 mx-7 md:mx-3 md:mt-5 lg:mt-12 flex items-center gap-2 animate-slidein [--slidein-delay:950ms] opacity-0"
             >
@@ -237,7 +237,7 @@ const HeroSection = () => {
               rental. Enjoy your holiday with us. We make your drive memorable.
             </Typography> */}
             <Button
-             color="indigo"
+             color="lime"
               onClick={submitHandler}
               className="mt-2 mx-7 md:mt-5 md:mx-3 lg:mt-12 flex items-center gap-2 animate-slidein [--slidein-delay:950ms] opacity-0"
             >
