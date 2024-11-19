@@ -413,7 +413,7 @@ export function SimpleRegistrationForm() {
                       name="firstName"
                       type="text"
                       placeholder="Enter your first name"
-                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent text-white"
                     />
                     <ErrorMessage name="firstName" component="span" className="text-red-500 mt-1 text-xs" />
                   </div>
@@ -426,7 +426,7 @@ export function SimpleRegistrationForm() {
                       name="lastName"
                       type="text"
                       placeholder="Enter your last name"
-                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent text-white"
                     />
                     <ErrorMessage name="lastName" component="div" className="text-red-500 text-xs" />
                   </div>
@@ -439,7 +439,7 @@ export function SimpleRegistrationForm() {
                       name="email"
                       type="email"
                       placeholder="Email"
-                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 bg-transparent text-white"
                     />
                     <ErrorMessage name="email" component="div" className="text-red-500 text-xs" />
                   </div>
@@ -487,7 +487,8 @@ export function SimpleRegistrationForm() {
                         name="mobileNo"
                         type="text"
                         placeholder="Mobile Number"
-                        className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                        className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white"
+                        
                       />
                     </div>
                     <ErrorMessage name="mobileNo" component="div" className="text-red-500 text-xs" />
@@ -501,7 +502,7 @@ export function SimpleRegistrationForm() {
                       name="password"
                       type="password"
                       placeholder="Password"
-                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white text-white"
                     />
                     <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                   </div>
@@ -513,7 +514,7 @@ export function SimpleRegistrationForm() {
                     <Field
                       name="address"
                       placeholder="Address"
-                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white"
                     />
                     <ErrorMessage name="address" component="div" className="text-red-500 text-xs" />
                     </div>
@@ -525,7 +526,7 @@ export function SimpleRegistrationForm() {
                     <Field
                       name="city"
                       placeholder="City"
-                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white"
                     />
                     <ErrorMessage name="city" component="div" className="text-red-500 text-xs" />
                   </div>
@@ -537,7 +538,7 @@ export function SimpleRegistrationForm() {
                     <Field
                       name="area"
                       placeholder="Area"
-                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white"
                     />
                     <ErrorMessage name="area" component="div" className="text-red-500 text-xs" />
                   </div>
