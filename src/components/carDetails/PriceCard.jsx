@@ -91,20 +91,20 @@ data;
             />
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
-            <IoHome />
+            <IoHome style={{ color: '#1d4ed8' }} />
             <div className=" mt-4 text-base font-[lotto]">
               Home Test Drive Available
             </div>
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
-            <FaLocationDot />
+            <FaLocationDot  style={{ color: '#1d4ed8' }} />
             <div className=" mt-4 text-base text-gray-700 font-[lotto]">
               Parked at: {area},{city}
             </div>
           </div>
           {userRole === "DEALEAR" ? (
             <div className="flex align-bottom items-baseline gap-3 ml-2">
-              <FaFileAlt />
+              <FaFileAlt  style={{ color: '#1d4ed8' }} />
               <div className=" mt-4 text-base text-gray-700 font-[lotto]">
                 View Inspection Report
               </div>
@@ -122,7 +122,7 @@ data;
               <div className="text-xl font-bold text-black font-[latto]">
                 ₹{price}
               </div>
-              <div className="uppercase text-gray-700 text-xs font-[lotto]">
+              <div className="uppercasetext-xs font-[lotto]  text-deep-purple-500 ">
                 Fixed Road Price
               </div>
             </div>
