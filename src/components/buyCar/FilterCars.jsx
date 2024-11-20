@@ -333,7 +333,7 @@ const FilterCars = ({ setUrlState }) => {
               <Typography
                 variant="h6"
                 color="blue-gray"
-                className="-mb-8 font-bold text-black font-[latto] text-lg"
+                className="-mb-8 font-bold text-black font-[sourceSans] text-lg"
               >
                 Price Range
               </Typography>
@@ -344,19 +344,19 @@ const FilterCars = ({ setUrlState }) => {
               <div className="flex flex-col gap-3 justify-between">
                 <div className="flex justify-between">
                   <div className="flex">
-                    <span className="p-2 font-[latto]" style={{ color: '#6EC207' }}>
+                    <span className="p-2 font-[sourceSans]" style={{ color: '#6EC207' }}>
                       ₹{formattedAmountMin}
                     </span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className=" p-2 font-[latto]" style={{ color: '#6EC207' }}>
+                    <span className=" p-2 font-[sourceSans]" style={{ color: '#6EC207' }}>
                       ₹{formattedAmountMax}
                     </span>
                   </div>
                 </div>
               </div>
               <div className="w-full flex items-center justify-center">
-                {/* <div className="flex text-center font-bold font-[latto] text-black">
+                {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
                   ₹0
                 </div> */}
                 <div className="w-full flex items-center px-2 mx-1">
@@ -382,13 +382,13 @@ const FilterCars = ({ setUrlState }) => {
                     disableSwap
                   />
                 </div>
-                {/* <div className="flex text-center font-bold font-[latto] text-black">
+                {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
                   ₹60L
                 </div> */}
               </div>
 
 
-              <div className="font-[latto] font-bold text-lg text-black">
+              <div className="font-[sourceSans] font-bold text-lg text-black">
                 What is your price range?
               </div>
               <div className="flex justify-center">
@@ -405,7 +405,7 @@ const FilterCars = ({ setUrlState }) => {
                       label={
                         <Typography
                           style={{
-                            fontFamily: "latto",
+                            fontFamily: "sourceSans",
                             fontSize: "17px",
                             fontWeight: "normal",
                             color: "black",
@@ -428,7 +428,7 @@ const FilterCars = ({ setUrlState }) => {
                       label={
                         <Typography
                           style={{
-                            fontFamily: "latto",
+                            fontFamily: "sourceSans",
                             fontSize: "17px",
                             fontWeight: "normal",
                             color: "black",
@@ -451,7 +451,7 @@ const FilterCars = ({ setUrlState }) => {
                       label={
                         <Typography
                           style={{
-                            fontFamily: "latto",
+                            fontFamily: "sourceSans",
                             fontSize: "17px",
                             fontWeight: "normal",
                             color: "black",
@@ -474,7 +474,7 @@ const FilterCars = ({ setUrlState }) => {
                       label={
                         <Typography
                           style={{
-                            fontFamily: "latto",
+                            fontFamily: "sourceSans",
                             fontSize: "17px",
                             fontWeight: "normal",
                             color: "black",
@@ -497,7 +497,7 @@ const FilterCars = ({ setUrlState }) => {
                       label={
                         <Typography
                           style={{
-                            fontFamily: "latto",
+                            fontFamily: "sourceSans",
                             fontSize: "17px",
                             fontWeight: "normal",
                             color: "black",

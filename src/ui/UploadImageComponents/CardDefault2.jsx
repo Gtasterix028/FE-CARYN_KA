@@ -37,15 +37,15 @@ export function CardDefault2({ data }) {
         
         
           <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <DriveEtaIcon className="mr-1"  style={{ color: "#6EC207" }}/> {/* KM Driven Icon */}
     {data.kmDriven} KM
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <LocalGasStationIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
     {data.fuelType}
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <TransmissionIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Transmission Icon */}
     {data.transmission}
   </span>
@@ -53,7 +53,7 @@ export function CardDefault2({ data }) {
 
           <Typography
             variant="h6"
-            className="mt-2 font-bold text-xl text-black"
+            className="mt-2 font-bold text-xl text-black font-[sourceSans]"
           >
             ₹ {data.price}
           </Typography>
@@ -63,7 +63,7 @@ export function CardDefault2({ data }) {
           <Button className="mt-2 mb-4 p-[8px] bg-indigo-500 rounded-lg text-white">View Car</Button>
         </Link> */}
           <hr />
-          <p className="text-sm  text-purple-500">Free Test Drive Today at {data.area}</p>
+          <p className="text-sm  text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p>
         </Link>
       </CardBody>
     </Card>

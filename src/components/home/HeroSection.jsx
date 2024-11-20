@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     // <div className="flex justify-between   ">
     //   <div className="md:p-12 p-4 h-auto bg-blue-100 w-full">
-    //     <p className="flex justify-center items-center md:justify-start font-latto text-xs md:mt-8 md:text-base lg:text-lg opacity-0 animate-slidein [--slidein-delay:300ms]">
+    //     <p className="flex justify-center items-center md:justify-start font-sourceSans text-xs md:mt-8 md:text-base lg:text-lg opacity-0 animate-slidein [--slidein-delay:300ms]">
     //       Welcomes to caryanamindia
     //     </p>
     //     <p className="flex justify-center items-center md:justify-start text-md md:mb-3 md:text-xl lg:text-4xl font-Merriweather animate-slidein [--slidein-delay:600ms] opacity-0 ">
@@ -97,13 +97,13 @@ const HeroSection = () => {
     >
       <div className="flex justify-between overflow-hidden">
         <div className="lg:pl-28 md:pl-16 p-4 h-[400px] md:h-[300px] bg-blue-100 w-full">
-          <p className="flex mb-1 justify-center items-center md:justify-start font-[latto] font-semibold text-2xl md:mt-1 md:text-4xl lg:text-4xl opacity-0 animate-slidein [--slidein-delay:300ms]">
+          <p className="flex mb-1 justify-center items-center md:justify-start font-[sourceSans] font-semibold text-2xl md:mt-1 md:text-4xl lg:text-4xl opacity-0 animate-slidein [--slidein-delay:300ms]">
             Welcomes to caryanamindia
           </p>
-          <p className="flex justify-center mb-1 items-center md:justify-start text-xl md:mb-3 md:text-2xl lg:text-2xl font-[latto] animate-slidein [--slidein-delay:600ms] opacity-0 ">
+          <p className="flex justify-center mb-1 items-center md:justify-start text-xl md:mb-3 md:text-2xl lg:text-2xl font-[sourceSans] animate-slidein [--slidein-delay:600ms] opacity-0 ">
             Your Journey to Exceptional
           </p>
-          <p className="flex justify-center items-center md:justify-start text-xl md:text-2xl lg:text-2xl font-[latto] animate-slidein [--slidein-delay:900ms] opacity-0 ">
+          <p className="flex justify-center items-center md:justify-start text-xl md:text-2xl lg:text-2xl font-[sourceSans] animate-slidein [--slidein-delay:900ms] opacity-0 ">
             Cars Begins Here!
           </p>
           <div className=" flex right-0 items-center justify-center">
@@ -172,14 +172,14 @@ const HeroSection = () => {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 lg:w-3/4 text-black font-[latto] px-7 md:px-2 text-3xl md:text-4xl lg:text-4xl"
+              className="mb-4 lg:w-3/4 text-black font-[sourceSans] px-7 md:px-2 text-3xl md:text-4xl lg:text-4xl"
             >
               The Best Cars For The Best Journey
             </Typography>
             {/* <Typography
               variant="lead"
               color="white"
-              className="mb-4 w-3/4 lg:w-[68%] font-[latto] text-black text-sm md:mb-3 md:text-xl lg:text-xl"
+              className="mb-4 w-3/4 lg:w-[68%] font-[sourceSans] text-black text-sm md:mb-3 md:text-xl lg:text-xl"
             >
               We provide best cars with the best prices. We are expert in car
               rental. Enjoy your holiday with us. We make your drive memorable.
@@ -224,14 +224,14 @@ const HeroSection = () => {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 lg:w-3/4 text-white font-[latto] px-7 text-3xl md:text-4xl lg:text-4xl"
+              className="mb-4 lg:w-3/4 text-white font-[sourceSans] px-7 text-3xl md:text-4xl lg:text-4xl"
             >
               The Best Cars For The Best Journey
             </Typography>
             {/* <Typography
               variant="lead"
               color="white"
-              className="mb-4 w-3/4 lg:w-[68%] font-[latto] text-black text-sm md:mb-3 md:text-xl lg:text-xl"
+              className="mb-4 w-3/4 lg:w-[68%] font-[sourceSans] text-black text-sm md:mb-3 md:text-xl lg:text-xl"
             >
               We provide best cars with the best prices. We are expert in car
               rental. Enjoy your holiday with us. We make your drive memorable.

@@ -46,25 +46,25 @@ const UserConfirmBooking = () => {
             <Chip
               variant="outlined"
               value={`${item?.date}`}
-              className="rounded-full font-[latto] text-sm"
+              className="rounded-full font-[sourceSans] text-sm"
             ></Chip>
             <Chip
               color="amber"
               value={`${item?.status}`}
-              className="font-[latto] text-sm"
+              className="font-[sourceSans] text-sm"
             ></Chip>
           </div>
           <div className="w-full flex justify-center">
             <div className="mt-5 flex flex-col justify-center">
-              <div className="text-lg mt-3 font-[latto] font-medium text-black">
+              <div className="text-lg mt-3 font-[sourceSans] font-medium text-black">
                 Car Price:₹{item?.price}
               </div>
-              <div className=" mt-3 font-[latto] text-lg font-medium text-black">
+              <div className=" mt-3 font-[sourceSans] text-lg font-medium text-black">
                 Asking Price:₹{item?.askingPrice}
               </div>
 
               <Link to={`/carlist/cardetails/${item?.carId}`}>
-                <Button className="flex gap-2 items-center mt-3 font-[latto]">
+                <Button className="flex gap-2 items-center mt-3 font-[sourceSans]">
                   <span>Car Details </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

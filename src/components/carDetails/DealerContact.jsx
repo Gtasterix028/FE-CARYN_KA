@@ -42,11 +42,11 @@ const DealerContact = ({ dealer_id }) => {
                   <MdPerson className="w-5 h-5 text-gray-600 flex-shrink-0" />
                 </div>
                 <div className="ml-3">
-                  <p className="text-black font-semibold font-[latto]">Name:</p>
+                  <p className="text-black font-semibold font-[sourceSans]">Name:</p>
                 </div>
               </div>
               <div className="flex-1 ml-7 md:ml-0">
-                <p className="text-gray-600 font-[latto] lg:ml-6 md:ml-2">{firstName} {lastName}</p>
+                <p className="text-gray-600 font-[sourceSans] lg:ml-6 md:ml-2">{firstName} {lastName}</p>
               </div>
             </div>
 
@@ -56,11 +56,11 @@ const DealerContact = ({ dealer_id }) => {
                   <FaLocationDot className="w-5 h-5 text-gray-600 flex-shrink-0" />
                 </div>
                 <div className="ml-3">
-                  <p className="text-black font-semibold font-[latto]">Address:</p>
+                  <p className="text-black font-semibold font-[sourceSans]">Address:</p>
                 </div>
               </div>
               <div className="flex-1 ml-3 md:ml-0 flex-wrap">
-                <p className="text-gray-600 font-[latto] lg:ml-2 md:ml-2">{address}, {city}</p>
+                <p className="text-gray-600 font-[sourceSans] lg:ml-2 md:ml-2">{address}, {city}</p>
               </div>
             </div>
 
@@ -70,11 +70,11 @@ const DealerContact = ({ dealer_id }) => {
                   <MdEmail className="w-5 h-5 text-gray-600 flex-shrink-0" />
                 </div>
                 <div className="ml-3">
-                  <p className="text-black font-semibold font-[latto]">Email:</p>
+                  <p className="text-black font-semibold font-[sourceSans]">Email:</p>
                 </div>
               </div>
               <div className="flex-1 ml-5 md:ml-0 ">
-                <p className="text-gray-600 font-[latto] ml-2 lg:ml-6 whitespace-nowrap">{email}</p>
+                <p className="text-gray-600 font-[sourceSans] ml-2 lg:ml-6 whitespace-nowrap">{email}</p>
               </div>
             </div>
 
@@ -84,11 +84,11 @@ const DealerContact = ({ dealer_id }) => {
                   <IoLogoWhatsapp className="w-5 h-5 text-gray-600 flex-shrink-0" />
                 </div>
                 <div className="ml-3">
-                  <p className="text-black font-semibold font-[latto]">Phone:</p>
+                  <p className="text-black font-semibold font-[sourceSans]">Phone:</p>
                 </div>
               </div>
               <div className="flex-1 ml-5 md:ml-0">
-                <p className="text-gray-600 font-[latto] ml-1 lg:ml-5 md:ml-2">{mobileNo}</p>
+                <p className="text-gray-600 font-[sourceSans] ml-1 lg:ml-5 md:ml-2">{mobileNo}</p>
               </div>
             </div>
           </div>

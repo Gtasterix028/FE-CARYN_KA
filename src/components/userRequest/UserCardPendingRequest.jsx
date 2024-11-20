@@ -45,26 +45,26 @@ const UserCardPendingRequest = ({ item }) => {
                       
                         variant="outlined"
                         value={formatDate(item?.date)}
-                        className="rounded-md font-[latto] -ml-2 md:text-sm text-xs  md:h-8  h-7 "
+                        className="rounded-md font-[sourceSans] -ml-2 md:text-sm text-xs  md:h-8  h-7 "
                       />
                     </div>
                     <div>
                       <Chip
                         color="amber"
                         value={`${item?.status}`}
-                        className="font-[latto] md:text-sm text-xs md:mr-2  "
+                        className="font-[sourceSans] md:text-sm text-xs md:mr-2  "
                       />
                     </div>
                   </div>
-                  <div className="text-sm md:text-lg mt-3 font-[latto] font-medium text-black">
+                  <div className="text-sm md:text-lg mt-3 font-[sourceSans] font-medium text-black">
                     <span className="font-bold">Car Price:</span> ₹{item?.price}
                   </div>
-                  <div className="mt-3 font-[latto] text-sm md:text-lg font-medium text-black">
+                  <div className="mt-3 font-[sourceSans] text-sm md:text-lg font-medium text-black">
                     <span className="font-bold">Asking Price:</span> ₹{item?.askingPrice}
                   </div>
 
                   <Link to={`/carlist/cardetails/${item?.carId}`}>
-                    <Button className="flex gap-2 bg-indigo-500 items-center mt-3 mb-3 md:mb-0 font-[latto]">
+                    <Button className="flex gap-2 bg-indigo-500 items-center mt-3 mb-3 md:mb-0 font-[sourceSans]">
                       <span className="text-xs">Car Details </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

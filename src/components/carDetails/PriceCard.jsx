@@ -50,7 +50,7 @@ data;
     <div className="border mx-auto shadow-xl w-full md:w-full ">
       <CardUi >
         <div className="w-full md:w-full ">
-          <p className="font-extrabold text-2xl text-black uppercase font-[latto] ml-2 ">
+          <p className="font-extrabold text-2xl text-black uppercase font-[sourceSans] ml-2 ">
             {year} {brand} {model}
           </p>
           <p className="uppercase font-[Merriweather] ml-2 ">
@@ -60,7 +60,7 @@ data;
             <Chip
               variant="outlined"
               value={`${kmDriven} KM`}
-              className="text-sm text-black font-[latto] "
+              className="text-sm text-black font-[sourceSans] "
             />
             <Chip
               variant="outlined"
@@ -77,52 +77,52 @@ data;
                   ? "5TH"
                   : ""
               } Owner`}
-              className="text-base text-black font-[latto]"
+              className="text-base text-black font-[sourceSans]"
             />
             <Chip
               variant="outlined"
               value={`${fuelType}`}
-              className="text-base text-black font-[latto]"
+              className="text-base text-black font-[sourceSans]"
             />
             <Chip
               variant="outlined"
               value={`${registration}`}
-              className="text-base text-black font-[latto]"
+              className="text-base text-black font-[sourceSans]"
             />
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
             <IoHome style={{ color: '#6EC207' }} />
-            <div className=" mt-4 text-base font-[lotto]">
+            <div className=" mt-4 text-base font-[sourceSans]">
               Home Test Drive Available
             </div>
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
             <FaLocationDot  style={{ color: '#6EC207' }} />
-            <div className=" mt-4 text-base text-gray-700 font-[lotto]">
+            <div className=" mt-4 text-base text-gray-700 font-[sourceSans]">
               Parked at: {area},{city}
             </div>
           </div>
           {userRole === "DEALEAR" ? (
             <div className="flex align-bottom items-baseline gap-3 ml-2">
               <FaFileAlt  style={{ color: '#6EC207' }} />
-              <div className=" mt-4 text-base text-gray-700 font-[lotto]">
+              <div className=" mt-4 text-base text-gray-700 font-[sourceSans]">
                 View Inspection Report
               </div>
             </div>
           ) : null}
           {/* <div className="flex align-bottom items-baseline gap-3 ml-2 ">
             <IoLogoWhatsapp />
-            <div className=" mt-4 mb-6 text-base text-gray-700 font-[lotto]">
+            <div className=" mt-4 mb-6 text-base text-gray-700 font-[sourceSans]">
               Get Service History Report
             </div>
           </div> */}
           <hr className="border-gray-400 mt-8" />
           <div className="flex justify-center align-middle items-center my-3">
             <div className="text-center">
-              <div className="text-xl font-bold text-black font-[latto]">
+              <div className="text-xl font-bold text-black font-[sourceSans]">
                 ₹{price}
               </div>
-              <div className="uppercasetext-xs font-[lotto]  text-deep-purple-500 ">
+              <div className="uppercasetext-xs font-[sourceSans]  text-deep-purple-500 ">
                 Fixed Road Price
               </div>
             </div>

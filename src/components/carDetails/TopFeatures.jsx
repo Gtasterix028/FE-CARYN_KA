@@ -74,7 +74,7 @@ const TopFeatures = ({
           {musicFeature ? (
             <div className="flex mt-5">
               <FaBluetooth className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Bluetooth Campatibility
               </div>
             </div>
@@ -82,7 +82,7 @@ const TopFeatures = ({
           {acFeature ? (
             <div className="flex mt-5">
               <TbAirConditioning className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Air Conditioning
               </div>
             </div>
@@ -90,7 +90,7 @@ const TopFeatures = ({
           {powerWindowFeature ? (
             <div className="flex mt-5">
               <GiWindow className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Power Windows
               </div>
             </div>
@@ -98,7 +98,7 @@ const TopFeatures = ({
           {rearParkingCameraFeature ? (
             <div className="flex mt-5">
               <FaCameraRetro className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Rear Parking Camera
               </div>
             </div>
@@ -106,7 +106,7 @@ const TopFeatures = ({
           {sunroof ? (
             <div className="flex mt-5">
               <IoSunnySharp className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Sunroof
               </div>
             </div>
@@ -114,7 +114,7 @@ const TopFeatures = ({
           {abs ? (
             <div className="flex mt-5">
               <RiAnticlockwiseFill className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 ABS
               </div>
             </div>
@@ -122,7 +122,7 @@ const TopFeatures = ({
           {airbag ? (
             <div className="flex mt-5">
               <FaAirbnb className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
               Air Bag
               </div>
             </div>
@@ -130,7 +130,7 @@ const TopFeatures = ({
           {childSafetyLocks ? (
             <div className="flex mt-5">
               <MdOutlineHealthAndSafety className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
                 Child Safety Locks
               </div>
             </div>
@@ -138,7 +138,7 @@ const TopFeatures = ({
           {buttonStart ? (
             <div className="flex mt-5">
               <IoRadioButtonOnSharp  className="w-[1.5rem] h-[1.5rem] ml-3 mr-5" />
-              <div className="font-semibold text-black font-[latto] text-lg">
+              <div className="font-semibold text-black font-[sourceSans] text-lg">
               Button Start
               </div>
             </div>
@@ -147,7 +147,7 @@ const TopFeatures = ({
 
         {userRole === "Dealer" ? (
           <div className="flex w-3/4 justify-center items-center mt-12 md:w-full">
-            <div className="flex gap-2 px-10 py-2 md:px-20 md:py-3 items-center bg-[#002441] text-white text-sm rounded-2xl uppercase font-[latto] ">
+            <div className="flex gap-2 px-10 py-2 md:px-20 md:py-3 items-center bg-[#002441] text-white text-sm rounded-2xl uppercase font-[sourceSans] ">
               <div>View Inspection Report</div>
               <div>
                 <IoIosArrowForward

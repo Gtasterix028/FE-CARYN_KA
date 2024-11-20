@@ -149,20 +149,20 @@ export function CardDefault({ data, Carid, refetch }) {
               {data.title}
             </Typography>
             <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <DriveEtaIcon className="mr-1"  style={{ color: "#6EC207" }}/> {/* KM Driven Icon */}
     {data.kmDriven} KM
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <LocalGasStationIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
     {data.fuelType}
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black">
+  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <TransmissionIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Transmission Icon */}
     {data.transmission}
   </span>
 </p>
-            <Typography variant="h6" className="font-bold text-black text-xl">
+            <Typography variant="h6" className="font-bold text-black text-xl font-[sourceSans]">
               ₹ {data.price}
             </Typography>
             {/* <Link to={`/carlist/cardetails/${data.carId}`}>
@@ -171,7 +171,7 @@ export function CardDefault({ data, Carid, refetch }) {
             </button>
           </Link> */}
             <hr />
-            <p className="text-sm text-purple-500">Free Test Drive Today at {data.area}</p>
+            <p className="text-sm text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p>
          
         </CardBody>
       </Card>

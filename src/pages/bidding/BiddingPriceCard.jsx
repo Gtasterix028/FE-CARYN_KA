@@ -120,7 +120,7 @@ const getTopThreeBids = (bidCarId) => {
     <div className="w-full px-4 md:px-0 md:mt-4">
     <CardUi>
       <div className="w-full md:w-full p-4">
-        <p className="font-extrabold text-2xl text-black uppercase font-[latto] ml-2 md:ml-0">
+        <p className="font-extrabold text-2xl text-black uppercase font-[sourceSans] ml-2 md:ml-0">
           {data?.year} {data?.brand} {data?.model}
         </p>
         <p className="uppercase font-[Merriweather] ml-2 md:ml-0">
@@ -130,7 +130,7 @@ const getTopThreeBids = (bidCarId) => {
           <Chip
             variant="outlined"
             value={`${data?.kmDriven} KM`}
-            className="text-sm text-black font-[latto]"
+            className="text-sm text-black font-[sourceSans]"
           />
           <Chip
             variant="outlined"
@@ -147,62 +147,62 @@ const getTopThreeBids = (bidCarId) => {
                 ? "5TH"
                 : ""
             } Owner`}
-            className="text-base text-black font-[latto]"
+            className="text-base text-black font-[sourceSans]"
           />
           <Chip
             variant="outlined"
             value={`${data?.fuelType}`}
-            className="text-base text-black font-[latto]"
+            className="text-base text-black font-[sourceSans]"
           />
           <Chip
             variant="outlined"
             value={`${data?.registration}`}
-            className="text-base text-black font-[latto]"
+            className="text-base text-black font-[sourceSans]"
           />
         </div>
         <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0">
           <IoHome style={{ color: '#6EC207' }} />
-          <div className="mt-4 text-base font-[latto]">
+          <div className="mt-4 text-base font-[sourceSans]">
             Home Test Drive Available
           </div>
         </div>
         <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0">
           <FaLocationDot style={{ color: '#6EC207' }} />
-          <div className="mt-4 text-base text-gray-700 font-[latto]">
+          <div className="mt-4 text-base text-gray-700 font-[sourceSans]">
             Parked at: {data?.area}, {data?.city}
           </div>
         </div>
         <Link to={userRole === "SALESPERSON" ? `/sale/inspection/report/${data?.beadingCarId}` : userRole ==="ADMIN" ? `/admin/inspection/report/${data?.beadingCarId}` : `/dealer/finalreport/${data?.beadingCarId}`}>
             <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0 mb-5">
               <FaFileAlt style={{ color: '#6EC207' }}  />
-              <div className="mt-4 text-base text-gray-700 font-[latto]">
+              <div className="mt-4 text-base text-gray-700 font-[sourceSans]">
                 View Inspection Report
               </div>
             </div>
         </Link>
         {/* <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0">
           <IoLogoWhatsapp />
-          <div className="mt-4 mb-6 text-base text-gray-700 font-[latto]">
+          <div className="mt-4 mb-6 text-base text-gray-700 font-[sourceSans]">
             Get Service History Report
           </div>
         </div> */}
         <hr className="border-gray-400" />
         <div className="flex justify-center align-middle items-center my-3">
           <div className="text-center">
-            <div className="text-xl font-bold text-black font-[latto]">
+            <div className="text-xl font-bold text-black font-[sourceSans]">
              Amount: {highestBid || null}  ₹
             </div>
-            <div className="uppercase text-xs font-[latto]  text-deep-purple-500">
+            <div className="uppercase text-xs font-[sourceSans]  text-deep-purple-500">
               Fixed Road Price
             </div>
             {userRole === "DEALER" && timerId !== "success" ? (
               <div>
               <div className="fixed bottom-16 left-4 right-4 z-50 bg-white p-2 md:hidden">
-               <div className={`text-xl uppercase font-bold font-[latto] ${textColorClass}`}>
+               <div className={`text-xl uppercase font-bold font-[sourceSans] ${textColorClass}`}>
                {timeLeft}
              </div>
              </div>
-             <div className={`text-xl uppercase font-bold font-[latto] hidden md:block ${textColorClass}`}>
+             <div className={`text-xl uppercase font-bold font-[sourceSans] hidden md:block ${textColorClass}`}>
                {timeLeft}
              </div>
              </div>
