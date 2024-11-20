@@ -502,7 +502,7 @@ export function SimpleRegistrationForm() {
                       name="password"
                       type="password"
                       placeholder="Password"
-                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent text-white text-white"
+                      className="border border-gray-400 rounded-md h-8 p-1 w-full bg-transparent  text-white"
                     />
                     <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                   </div>
