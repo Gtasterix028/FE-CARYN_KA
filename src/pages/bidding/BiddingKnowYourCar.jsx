@@ -93,7 +93,7 @@ const BiddingKnowYourCar = ({
           <div className="w-full grid grid-cols-1 ml-5 md:ml-0 gap-y-4  md:grid md:grid-cols-3 md:gap-y-8 mt-5 px-8">
               <div className="flex items-center gap-5">
                 <div>
-                  <FaRegWindowMaximize className="w-5 h-5" style={{ color: '#f97316' }}  />
+                  <FaRegWindowMaximize className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
                   <div className="font-[latto]">Reg Number</div>
@@ -104,7 +104,7 @@ const BiddingKnowYourCar = ({
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <FaCalendarDay className="w-5 h-5" style={{ color: '#f97316' }}  />
+                  <FaCalendarDay className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
                   <div className="font-[latto]">Make Year</div>
@@ -126,7 +126,7 @@ const BiddingKnowYourCar = ({
               </div> */}
               <div className="flex items-center gap-5">
                 <div>
-                  <BsFillFuelPumpFill className="w-5 h-5" style={{ color: '#f97316' }}  />
+                  <BsFillFuelPumpFill className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
                   <div className="font-[latto]">Fuel Type</div>
@@ -162,7 +162,7 @@ const BiddingKnowYourCar = ({
             
               <div className="flex items-center gap-5">
                 <div>
-                  <GiCarWheel className="w-5 h-5" style={{ color: '#f97316' }}  />
+                  <GiCarWheel className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
                   <div className="font-[latto]">Transmission</div>
@@ -173,7 +173,7 @@ const BiddingKnowYourCar = ({
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <MdDriveEta className="w-5 h-5"  style={{ color: '#f97316' }} />
+                  <MdDriveEta className="w-5 h-5"  style={{ color: '#6EC207' }} />
                 </div>
                 <div className="flex flex-col">
                   <div className="font-[latto]">KM Driven</div>
@@ -184,7 +184,7 @@ const BiddingKnowYourCar = ({
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <IoIosMan className="w-5 h-5" style={{ color: '#f97316' }}  />
+                  <IoIosMan className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col ">
                   <div className="font-[latto]">Ownership</div>
@@ -197,7 +197,7 @@ const BiddingKnowYourCar = ({
               {carInsurance && (
                 <div className="flex items-center gap-5">
                   <div>
-                    <AiFillInsurance className="w-5 h-5" style={{ color: '#f97316' }}  />
+                    <AiFillInsurance className="w-5 h-5" style={{ color: '#6EC207' }}  />
                   </div>
                   <div className="flex flex-col">
                     <div className="font-[latto]">Insurance Type</div>

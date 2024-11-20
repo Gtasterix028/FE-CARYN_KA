@@ -91,20 +91,20 @@ data;
             />
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
-            <IoHome style={{ color: '#1d4ed8' }} />
+            <IoHome style={{ color: '#6EC207' }} />
             <div className=" mt-4 text-base font-[lotto]">
               Home Test Drive Available
             </div>
           </div>
           <div className="flex align-bottom items-baseline gap-3 ml-2">
-            <FaLocationDot  style={{ color: '#1d4ed8' }} />
+            <FaLocationDot  style={{ color: '#6EC207' }} />
             <div className=" mt-4 text-base text-gray-700 font-[lotto]">
               Parked at: {area},{city}
             </div>
           </div>
           {userRole === "DEALEAR" ? (
             <div className="flex align-bottom items-baseline gap-3 ml-2">
-              <FaFileAlt  style={{ color: '#1d4ed8' }} />
+              <FaFileAlt  style={{ color: '#6EC207' }} />
               <div className=" mt-4 text-base text-gray-700 font-[lotto]">
                 View Inspection Report
               </div>

@@ -161,20 +161,20 @@ const getTopThreeBids = (bidCarId) => {
           />
         </div>
         <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0">
-          <IoHome style={{ color: '#1d4ed8' }} />
+          <IoHome style={{ color: '#6EC207' }} />
           <div className="mt-4 text-base font-[latto]">
             Home Test Drive Available
           </div>
         </div>
         <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0">
-          <FaLocationDot style={{ color: '#1d4ed8' }} />
+          <FaLocationDot style={{ color: '#6EC207' }} />
           <div className="mt-4 text-base text-gray-700 font-[latto]">
             Parked at: {data?.area}, {data?.city}
           </div>
         </div>
         <Link to={userRole === "SALESPERSON" ? `/sale/inspection/report/${data?.beadingCarId}` : userRole ==="ADMIN" ? `/admin/inspection/report/${data?.beadingCarId}` : `/dealer/finalreport/${data?.beadingCarId}`}>
             <div className="flex align-bottom items-baseline gap-3 ml-2 md:ml-0 mb-5">
-              <FaFileAlt style={{ color: '#1d4ed8' }}  />
+              <FaFileAlt style={{ color: '#6EC207' }}  />
               <div className="mt-4 text-base text-gray-700 font-[latto]">
                 View Inspection Report
               </div>

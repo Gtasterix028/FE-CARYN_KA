@@ -150,15 +150,15 @@ export function CardDefault({ data, Carid, refetch }) {
             </Typography>
             <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
   <span className="flex items-center p-[5px] rounded-sm text-black">
-    <DriveEtaIcon className="mr-1"  style={{ color: "#F96E2A" }}/> {/* KM Driven Icon */}
+    <DriveEtaIcon className="mr-1"  style={{ color: "#6EC207" }}/> {/* KM Driven Icon */}
     {data.kmDriven} KM
   </span>
   <span className="flex items-center p-[5px] rounded-sm text-black">
-    <LocalGasStationIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Fuel Type Icon */}
+    <LocalGasStationIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
     {data.fuelType}
   </span>
   <span className="flex items-center p-[5px] rounded-sm text-black">
-    <TransmissionIcon className="mr-1" style={{ color: "#F96E2A" }} /> {/* Transmission Icon */}
+    <TransmissionIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Transmission Icon */}
     {data.transmission}
   </span>
 </p>

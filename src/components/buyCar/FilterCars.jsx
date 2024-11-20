@@ -344,33 +344,33 @@ const FilterCars = ({ setUrlState }) => {
               <div className="flex flex-col gap-3 justify-between">
                 <div className="flex justify-between">
                   <div className="flex">
-                    <span className="text-black p-2 font-[latto]">
+                    <span className="p-2 font-[latto]" style={{ color: '#6EC207' }}>
                       ₹{formattedAmountMin}
                     </span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-black p-2 font-[latto]">
+                    <span className=" p-2 font-[latto]" style={{ color: '#6EC207' }}>
                       ₹{formattedAmountMax}
                     </span>
                   </div>
                 </div>
               </div>
               <div className="w-full flex items-center justify-center">
-                <div className="flex text-center font-bold font-[latto] text-black">
+                {/* <div className="flex text-center font-bold font-[latto] text-black">
                   ₹0
-                </div>
+                </div> */}
                 <div className="w-full flex items-center px-2 mx-1">
                   <Slider
                     className="w-full"
                     sx={{
                       "& .MuiSlider-thumb": {
-                        color: "#6366F1",
+                        color: "#6EC207",
                       },
                       "& .MuiSlider-track": {
-                        color: "#6366F1",
+                        color: "#6EC207",
                       },
                       "& .MuiSlider-rail": {
-                        color: "#E5E7EB",
+                        color: "#6EC207",
                       },
                     }}
                     value={value}
@@ -382,10 +382,12 @@ const FilterCars = ({ setUrlState }) => {
                     disableSwap
                   />
                 </div>
-                <div className="flex text-center font-bold font-[latto] text-black">
+                {/* <div className="flex text-center font-bold font-[latto] text-black">
                   ₹60L
-                </div>
+                </div> */}
               </div>
+
+
               <div className="font-[latto] font-bold text-lg text-black">
                 What is your price range?
               </div>
@@ -509,6 +511,7 @@ const FilterCars = ({ setUrlState }) => {
                 </div>
               </div>
               <hr className="border-black border-1 w-full" />
+              {/* BUdgetend/Pricerange end */}
               <Autocomplete
                 id="area-autocomplete"
                 freeSolo
