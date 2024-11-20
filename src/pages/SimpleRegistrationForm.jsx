@@ -386,18 +386,21 @@ export function SimpleRegistrationForm() {
           <Typography variant="h4" color="white" className="text-center mb-4">
             Sign Up
           </Typography>
-
+       
           <Formik
             initialValues={{
               email: "",
-              password: "",
-              mobileNo: "",
-              firstName: "",
-              lastName: "",
-              address: "",
-              city: "",
-              area: "",
-              status: false,
+                          password: "",
+                          mobileNo: "",
+                          firstName: "",
+                          lastName: "",
+                          address: "",
+                          city: "",
+                          roles: "USER",
+                          document: 0,
+                          area: "",
+                          status: false,
+                          userType: "",
             }}
             validationSchema={validationSchema}
             onSubmit ={handleSubmit}
