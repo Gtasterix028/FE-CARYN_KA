@@ -21,6 +21,10 @@ import { addFavoriteCar, removeFavoriteCar } from "../pages/favoritesSlice";
 import DriveEtaIcon from '@mui/icons-material/DriveEta'; // Example icon for KM
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation'; // Example icon for fuel type
 import TransmissionIcon from '@mui/icons-material/Settings'; // Example icon for transmission (you can choose a better one)
+import { FaArrowRight } from 'react-icons/fa';
+import { FaLocationDot } from "react-icons/fa6";
+import CheckCircle from '@mui/icons-material/CheckCircle';
+
 function RatedIcon() {
   return (
     <svg
@@ -100,7 +104,7 @@ export function CardDefault({ data, Carid, refetch }) {
     }
   };
 
-  const combinedText = `${data.brand} ${data.model}`;
+  const combinedText = `${data.year} ${data.brand} ${data.model}`;
   const truncatedText =
     combinedText.length > 25
       ? combinedText.substring(0, 22) + "..."
@@ -134,7 +138,7 @@ export function CardDefault({ data, Carid, refetch }) {
                 </div>
               </div>
             ) : null}
-            <Typography>{data.year}</Typography>
+            {/* <Typography>{data.year}</Typography> */}
               <Typography
                 variant="h5"
                 color="blue-gray"
@@ -142,12 +146,22 @@ export function CardDefault({ data, Carid, refetch }) {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                {isHovered ? data.brand + " " + data.model : truncatedText}
+                {isHovered ? data.year+" "+data.brand + " " + data.model : truncatedText}
                 {/* {`${data.brand} ${data.model}`.length > 25 ? `${data.brand} ${data.model}`.substring(0, 22) + '...' : `${data.brand} ${data.model}`} */}
               </Typography>
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              {data.title}
+
+              <div className="flex align-bottom items-baseline gap-3 ">
+              <Typography variant="h10" color="blue-gray" className="mb-2">
+              <CheckCircle style={{ color: 'green' }}/>  {data.title}
             </Typography>
+            <FaLocationDot  style={{ color: '#000' }} />
+            <div className="  text-base text-gray-700 font-[sourceSans]">
+             {data.area},{data.city}
+            </div>
+          </div>
+           
+
+
             <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
   <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
     <DriveEtaIcon className="mr-1"  style={{ color: "#6EC207" }}/> {/* KM Driven Icon */}
@@ -162,7 +176,7 @@ export function CardDefault({ data, Carid, refetch }) {
     {data.transmission}
   </span>
 </p>
-            <Typography variant="h6" className="font-bold text-black text-xl font-[sourceSans]">
+            <Typography variant="h6" className="font-bold text-blue-gray-900 text-2xl ">
               ₹ {data.price}
             </Typography>
             {/* <Link to={`/carlist/cardetails/${data.carId}`}>
@@ -170,8 +184,15 @@ export function CardDefault({ data, Carid, refetch }) {
               View Car
             </button>
           </Link> */}
-            <hr />
-            <p className="text-sm text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p>
+           <Link to={`/carlist/cardetails/${data.carId}`}>
+          {" "}
+          <Typography  variant="h6"  className="mb-2 mt-2"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
+            View Car Details  <FaArrowRight style={{ color: 'green', fontSize: '15px' }} />
+          </Typography>
+          </Link>
+            {/* <hr /> */}
+
+            {/* <p className="text-sm text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p> */}
          
         </CardBody>
       </Card>

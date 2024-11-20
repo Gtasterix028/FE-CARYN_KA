@@ -14,6 +14,9 @@ import {
   ListItem,
   Menu,
 } from "@material-tailwind/react";
+// import { FaUser  } from 'react-icons/fa'; // Import the icon you want to use
+import PersonOutline from '@mui/icons-material/PersonOutline';
+
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -731,7 +734,7 @@ function ConfermListMenu() {
               />
             ) : (
               <>
-                <Link to="/signin">
+                {/* <Link to="/signin">
                   <Button
                     variant="text"
                     size="sm"
@@ -750,7 +753,31 @@ function ConfermListMenu() {
                   >
                     <span>Sign Up</span>
                   </Button>
-                </Link>
+                </Link> */}
+
+                <div className="flex items-center">
+                  <PersonOutline className="mr-2 " style={{ color: "white" }} />
+
+                  <Link
+                    to="/signin"
+                    className=" lg:inline-flex items-center"
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">
+                      Login
+                    </span>
+                  </Link>
+                  <span className="text-lg text-white font-[sourceSans] mr-2">
+                    /
+                  </span>
+                  <Link
+                    to="/signup"
+                    className=" lg:inline-flex items-center "
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">
+                      Register
+                    </span>
+                  </Link>
+                </div>
               </>
             )}
           </div>
@@ -798,23 +825,19 @@ function ConfermListMenu() {
       <Collapse open={openNav}>
         {navList}
         {token ? null : (
-          <div className="flex items-center gap-x-1">
-            <Link to="/signin">
-              <Button fullWidth variant="text" size="sm" className="">
-                <span>Sign In</span>
-              </Button>
-            </Link>
+          <div className="flex items-center">
+            <PersonOutline className="mr-2 " style={{ color: "white" }} />
 
-            <Link to="/signup">
-              <Button
-                fullWidth
-                color="indigo"
-                variant="gradient"
-                size="sm"
-                className=""
-              >
-                <span>Sign up</span>
-              </Button>
+            <Link to="/signin" className=" lg:inline-flex items-center">
+              <span className="text-lg text-white font-[sourceSans] mr-2">
+                Login
+              </span>
+            </Link>
+            <span className="text-lg text-white font-[sourceSans] mr-2">/</span>
+            <Link to="/signup" className=" lg:inline-flex items-center ">
+              <span className="text-lg text-white font-[sourceSans] mr-2">
+                Register
+              </span>
             </Link>
           </div>
         )}
