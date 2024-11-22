@@ -1015,18 +1015,7 @@ const FilterCars = ({ setUrlState }) => {
             </div>
 
             <div className="mb-1 flex flex-col gap-4">
-              {/* <div
-                className="flex items-center cursor-pointer gap-28"
-                onClick={toggleBox}
-              >
-                <span className="ml-2 font-bold text-lg">Budget</span>
-                {isOpen ? (
-                  <MinusIcon className="h-6 w-6 bold text-blue-500" />
-                ) : (
-                  <PlusIcon className="h-6 w-6 text-blue-500" />
-                )}
-              </div> */}
-
+          
               <Box
                 onClick={() => handleToggle("budget")}
                 sx={{

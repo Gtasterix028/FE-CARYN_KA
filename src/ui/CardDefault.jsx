@@ -111,7 +111,7 @@ export function CardDefault({ data, Carid, refetch }) {
       : combinedText;
   return (
     <div className="flex justify-center mx-auto">
-      <Card className="max-w-[19rem] overflow-hidden hover:border hover:border-3 hover:shadow-2xl hover:scale-105 border-indigo-200 border">
+      <Card className="max-w-[19rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  border-indigo-700 border">
         <CardHeader
           floated={false}
           shadow={false}
@@ -150,15 +150,6 @@ export function CardDefault({ data, Carid, refetch }) {
                 {/* {`${data.brand} ${data.model}`.length > 25 ? `${data.brand} ${data.model}`.substring(0, 22) + '...' : `${data.brand} ${data.model}`} */}
               </Typography>
 
-              <div className="flex align-bottom items-baseline gap-3 ">
-              <Typography variant="h10" color="blue-gray" className="mb-2">
-              <CheckCircle style={{ color: 'green' }}/>  {data.title}
-            </Typography>
-            <FaLocationDot  style={{ color: '#000' }} />
-            <div className="  text-base text-gray-700 font-[sourceSans]">
-             {data.area},{data.city}
-            </div>
-          </div>
            
 
 
@@ -190,8 +181,17 @@ export function CardDefault({ data, Carid, refetch }) {
             View Car Details  <FaArrowRight style={{ color: 'green', fontSize: '15px' }} />
           </Typography>
           </Link>
-            {/* <hr /> */}
+            <hr />
 
+              <div className="flex align-bottom items-baseline gap-3 ">
+              {/* <Typography variant="h10" color="blue-gray" className="mb-2">
+              <CheckCircle style={{ color: 'green' }}/>  {data.title}
+            </Typography> */}
+            <FaLocationDot  style={{ color: '#000' }} />
+            <div className="  text-base text-gray-700 font-[sourceSans]">
+             {data.area},{data.city}
+            </div>
+          </div>
             {/* <p className="text-sm text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p> */}
          
         </CardBody>
