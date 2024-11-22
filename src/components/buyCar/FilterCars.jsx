@@ -356,7 +356,6 @@
 //                 </div>
 //               </div>
 
-              
 //               <div className="w-full flex items-center justify-center">
 //                 {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
 //                   ₹0
@@ -388,7 +387,6 @@
 //                   ₹60L
 //                 </div> */}
 //               </div>
-
 
 //               <div className="font-[sourceSans] font-bold text-lg text-black my-0">
 //                 What is your price range?
@@ -661,18 +659,6 @@
 
 // export default FilterCars;
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Card } from "@material-tailwind/react";
@@ -686,10 +672,11 @@ import {
 import {
   Autocomplete,
   Checkbox,
+  Box,
   FormControlLabel,
   TextField,
 } from "@mui/material";
-import { PlusIcon, MinusIcon } from '@heroicons/react/24/outline'; // Import icons
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline"; // Import icons
 
 // eslint-disable-next-line react/prop-types
 const FilterCars = ({ setUrlState }) => {
@@ -720,11 +707,6 @@ const FilterCars = ({ setUrlState }) => {
       setModelOptions(models);
     }
   }, [variantData]);
-
-  const toggleBox = () => {
-    setIsOpen(!isOpen);
-  };
-
 
   const handleBrandChange = (event, newValue) => {
     const brand = newValue;
@@ -986,6 +968,30 @@ const FilterCars = ({ setUrlState }) => {
     }
   };
 
+  // State to manage open/close for each section
+  const [openSections, setOpenSections] = useState({
+    areas: false,
+    brands: false,
+    budget: false,
+  });
+
+  // Toggle the open/close state for a specific section
+  const handleToggle = (section) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section], // Toggle the specific section
+    }));
+  };
+
+  const handleAreaChange = (event, area) => {
+    const isChecked = event.target.checked;
+
+    setFilterForm((prevForm) => ({
+      ...prevForm,
+      area: isChecked ? area : "", // Set area to the selected area if checked, or to an empty string if unchecked
+    }));
+  };
+
   return (
     <div className="border-2 shadow-lg rounded-lg m-2">
       <div className="flex justify-end mr-5 ">
@@ -1001,211 +1007,249 @@ const FilterCars = ({ setUrlState }) => {
         </button>
       </div>
 
-      <Card
-        className={`p-4 ${
-          showFilters ? "block" : "hidden "
-        } md:block`}
-      >
+      <Card className={`p-4 ${showFilters ? "block" : "hidden "} md:block`}>
         <div className="space-y-4">
           <form onSubmit={submitHandle}>
             <div>
               <p className="font-bold mb-5 text-xl text-indigo-400">Filters</p>
             </div>
+
             <div className="mb-1 flex flex-col gap-4">
+              {/* <div
+                className="flex items-center cursor-pointer gap-28"
+                onClick={toggleBox}
+              >
+                <span className="ml-2 font-bold text-lg">Budget</span>
+                {isOpen ? (
+                  <MinusIcon className="h-6 w-6 bold text-blue-500" />
+                ) : (
+                  <PlusIcon className="h-6 w-6 text-blue-500" />
+                )}
+              </div> */}
 
-
-            
-            <div className="flex items-center cursor-pointer gap-28" onClick={toggleBox}>
-            <span className="ml-2 font-bold text-lg">Budget</span>
-        {isOpen ? (
-          <MinusIcon className="h-6 w-6 bold text-blue-500" />
-        ) : (
-          <PlusIcon className="h-6 w-6 text-blue-500" />
-        )}
-        
-      </div>
-
-
-      {isOpen && (
-        <div className="p-2 font-[sourceSans] bg-blue-gray-50" style={{ color: '#6EC207' }}>
-              <div className="flex justify-center items-center">
-                <div style={{ width: "300px" }}></div>
-              </div>
-              <div className="flex flex-col gap-3 justify-between">
-                <div className="flex justify-between">
-                  <div className="flex">
-                    <span className="p-2 font-[sourceSans]" style={{ color: '#6EC207' }}>
-                      ₹{formattedAmountMin}
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <span className=" p-2 font-[sourceSans]" style={{ color: '#6EC207' }}>
-                      ₹{formattedAmountMax}
-                    </span>
-                  </div>
+              <Box
+                onClick={() => handleToggle("budget")}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "2px", // Reduced padding for a smaller box
+                  marginBottom: "1px",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "60px",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    style={{ flexGrow: 1, fontWeight: "bold" }}
+                  >
+                    Budget/Price
+                  </Typography>
+                  {openSections.areas ? (
+                    <MinusIcon className="h-6 w-6 bold text-blue-500" />
+                  ) : (
+                    <PlusIcon className="h-6 w-6 bold text-blue-500" />
+                  )}
                 </div>
-              </div>
+              </Box>
 
-              
-              <div className="w-full flex items-center justify-center">
-                {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
+              {openSections.budget && (
+                <div
+                  className="p-2 font-[sourceSans] bg-blue-gray-50"
+                  style={{ color: "#6EC207" }}
+                >
+                  <div className="flex justify-center items-center">
+                    <div style={{ width: "300px" }}></div>
+                  </div>
+                  <div className="flex flex-col gap-3 justify-between">
+                    <div className="flex justify-between">
+                      <div className="flex">
+                        <span
+                          className="p-2 font-[sourceSans]"
+                          style={{ color: "#6EC207" }}
+                        >
+                          ₹{formattedAmountMin}
+                        </span>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span
+                          className=" p-2 font-[sourceSans]"
+                          style={{ color: "#6EC207" }}
+                        >
+                          ₹{formattedAmountMax}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full flex items-center justify-center">
+                    {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
                   ₹0
                 </div> */}
-                <div className="w-full flex items-center px-2 mx-1">
-                  <Slider
-                    className="w-full"
-                    sx={{
-                      "& .MuiSlider-thumb": {
-                        color: "#6EC207",
-                      },
-                      "& .MuiSlider-track": {
-                        color: "#6EC207",
-                      },
-                      "& .MuiSlider-rail": {
-                        color: "#6EC207",
-                      },
-                    }}
-                    value={value}
-                    onChange={handleSliderChange}
-                    valueLabelDisplay="auto"
-                    min={0}
-                    max={6000000}
-                    step={calculateStep(value[1])}
-                    disableSwap
-                  />
-                </div>
-                {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
+                    <div className="w-full flex items-center px-2 mx-1">
+                      <Slider
+                        className="w-full"
+                        sx={{
+                          "& .MuiSlider-thumb": {
+                            color: "#6EC207",
+                          },
+                          "& .MuiSlider-track": {
+                            color: "#6EC207",
+                          },
+                          "& .MuiSlider-rail": {
+                            color: "#6EC207",
+                          },
+                        }}
+                        value={value}
+                        onChange={handleSliderChange}
+                        valueLabelDisplay="auto"
+                        min={0}
+                        max={6000000}
+                        step={calculateStep(value[1])}
+                        disableSwap
+                      />
+                    </div>
+                    {/* <div className="flex text-center font-bold font-[sourceSans] text-black">
                   ₹60L
                 </div> */}
-              </div>
+                  </div>
 
-
-              <div className="font-[sourceSans] font-bold text-lg text-black my-0">
-                What is your price range?
-              </div>
-              <div className="flex justify-start ">
-                <div className="flex flex-col items-start">
-                  <div className="flex justify-center">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={underTwoLakh}
-                          onChange={handleCheckboxChange}
-                          color="success"
-                        />
-                      }
-                      label={
-                        <Typography
-                          style={{
-                            fontFamily: "sourceSans",
-                            fontSize: "17px",
-                            fontWeight: "normal",
-                            color: "black",
-                          }}
-                        >
-                          Under ₹2 Lakh
-                        </Typography>
-                      }
-                    />
+                  <div className="font-[sourceSans] font-bold text-lg text-black my-0">
+                    What is your price range?
                   </div>
-                  <div className="flex justify-center">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={twoLakhFiveLakh}
-                          onChange={handleCheckboxChange1}
-                          color="success"
+                  <div className="flex justify-start ">
+                    <div className="flex flex-col items-start">
+                      <div className="flex justify-center">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              checked={underTwoLakh}
+                              onChange={handleCheckboxChange}
+                              color="success"
+                            />
+                          }
+                          label={
+                            <Typography
+                              style={{
+                                fontFamily: "sourceSans",
+                                fontSize: "17px",
+                                fontWeight: "normal",
+                                color: "black",
+                              }}
+                            >
+                              Under ₹2 Lakh
+                            </Typography>
+                          }
                         />
-                      }
-                      label={
-                        <Typography
-                          style={{
-                            fontFamily: "sourceSans",
-                            fontSize: "17px",
-                            fontWeight: "normal",
-                            color: "black",
-                          }}
-                        >
-                          ₹2 - ₹5 Lakh
-                        </Typography>
-                      }
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={fiveToEightLakh}
-                          onChange={handleCheckboxChange2}
-                          color="success"
+                      </div>
+                      <div className="flex justify-center">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              checked={twoLakhFiveLakh}
+                              onChange={handleCheckboxChange1}
+                              color="success"
+                            />
+                          }
+                          label={
+                            <Typography
+                              style={{
+                                fontFamily: "sourceSans",
+                                fontSize: "17px",
+                                fontWeight: "normal",
+                                color: "black",
+                              }}
+                            >
+                              ₹2 - ₹5 Lakh
+                            </Typography>
+                          }
                         />
-                      }
-                      label={
-                        <Typography
-                          style={{
-                            fontFamily: "sourceSans",
-                            fontSize: "17px",
-                            fontWeight: "normal",
-                            color: "black",
-                          }}
-                        >
-                          ₹5 - ₹8 Lakh
-                        </Typography>
-                      }
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={eightToTenLakh}
-                          onChange={handleCheckboxChange3}
-                          color="success"
+                      </div>
+                      <div className="flex justify-center">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              checked={fiveToEightLakh}
+                              onChange={handleCheckboxChange2}
+                              color="success"
+                            />
+                          }
+                          label={
+                            <Typography
+                              style={{
+                                fontFamily: "sourceSans",
+                                fontSize: "17px",
+                                fontWeight: "normal",
+                                color: "black",
+                              }}
+                            >
+                              ₹5 - ₹8 Lakh
+                            </Typography>
+                          }
                         />
-                      }
-                      label={
-                        <Typography
-                          style={{
-                            fontFamily: "sourceSans",
-                            fontSize: "17px",
-                            fontWeight: "normal",
-                            color: "black",
-                          }}
-                        >
-                          ₹8 - ₹10 Lakh
-                        </Typography>
-                      }
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={aboveTenLakh}
-                          onChange={handleCheckboxChange4}
-                          color="success"
+                      </div>
+                      <div className="flex justify-center">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              checked={eightToTenLakh}
+                              onChange={handleCheckboxChange3}
+                              color="success"
+                            />
+                          }
+                          label={
+                            <Typography
+                              style={{
+                                fontFamily: "sourceSans",
+                                fontSize: "17px",
+                                fontWeight: "normal",
+                                color: "black",
+                              }}
+                            >
+                              ₹8 - ₹10 Lakh
+                            </Typography>
+                          }
                         />
-                      }
-                      label={
-                        <Typography
-                          style={{
-                            fontFamily: "sourceSans",
-                            fontSize: "17px",
-                            fontWeight: "normal",
-                            color: "black",
-                          }}
-                        >
-                          Above ₹10 Lakh
-                        </Typography>
-                      }
-                    />
+                      </div>
+                      <div className="flex justify-center">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              checked={aboveTenLakh}
+                              onChange={handleAreaChange}
+                              color="success"
+                            />
+                          }
+                          label={
+                            <Typography
+                              style={{
+                                fontFamily: "sourceSans",
+                                fontSize: "17px",
+                                fontWeight: "normal",
+                                color: "black",
+                              }}
+                            >
+                              Above ₹10 Lakh
+                            </Typography>
+                          }
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              </div>
-      )}
+              )}
               <hr className="border-black border-1 w-full" />
               {/* BUdgetend/Pricerange end */}
+
+              {/* 
               <Autocomplete
                 id="area-autocomplete"
                 freeSolo
@@ -1228,9 +1272,93 @@ const FilterCars = ({ setUrlState }) => {
                   }));
                 }}
                 renderInput={(params) => <TextField {...params} label="Area" />}
-              />
+              /> */}
 
-              <Autocomplete
+              <div className="mb-1 flex flex-col gap-4">
+                <Box
+                  onClick={() => handleToggle("areas")}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "2px", // Reduced padding for a smaller box
+                    marginBottom: "1px",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: "60px",
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      style={{ flexGrow: 1, fontWeight: "bold" }}
+                    >
+                      Area/RTO
+                    </Typography>
+                    {openSections.areas ? (
+                      <MinusIcon className="h-6 w-6 bold text-blue-500" />
+                    ) : (
+                      <PlusIcon className="h-6 w-6 bold text-blue-500" />
+                    )}
+                  </div>
+                </Box>
+
+                {openSections.areas && (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "4px",
+                    }}
+                  >
+                    {AreaData.map((option) => (
+                      <FormControlLabel
+                        key={option.area}
+                        control={
+                          <Checkbox
+                            checked={filterForm.area === option.area} // Check if the area matches the selected area
+                            onChange={(event) =>
+                              handleAreaChange(event, option.area)
+                            } // Pass the area to the handler
+                            value={option.area}
+                            sx={{
+                              width: 10, // Set custom width
+                              height: 10, // Set custom height
+                              "&.Mui-checked": {
+                                color: "#6EC207", // Change the color when checked
+                              },
+                            }}
+                            onClick={(e) => e.stopPropagation()} // Prevent click from bubbling up
+                          />
+                        }
+                        label={
+                          <Typography
+                            style={{
+                              fontFamily: "sourceSans",
+                              fontSize: "14px",
+                              fontWeight: "normal",
+                              color: "black",
+                              marginLeft: "8px",
+                            }}
+                          >
+                            {option.area}
+                          </Typography>
+                        }
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* *********** */}
+
+              {/* <Autocomplete
                 id="year-autocomplete"
                 freeSolo
                 options={Year}
@@ -1253,6 +1381,10 @@ const FilterCars = ({ setUrlState }) => {
                 }}
                 renderInput={(params) => <TextField {...params} label="Year" />}
               />
+              
+              */}
+
+              {/* ****************************** */}
 
               <Autocomplete
                 id="brand-autocomplete"

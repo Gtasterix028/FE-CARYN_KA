@@ -28,11 +28,11 @@ const PremiumCars = () => {
           />
           <div className="absolute grid inset-0 bg-black/30">
             <div className="mt-2 md:mt-4 xl:mt-8 ml-10">
-              <div className="text-white  text-md md:text-xl lg:text-4xl mb-2  font-bold  rounded xl:mt-[70px] lg:mt-[80px] mt-4 md:mt-[30px]">
+              <div className="text-white  text-xs md:text-xl lg:text-2xl mb-2  font-bold  rounded xl:mt-[70px] lg:mt-[80px] mt-4 md:mt-[30px]">
               Car Is Where Early Adopters And Innovation Seekers Lively Imaginative Tech Before It Hits The Mainstream
               </div>
               <Link to="/PremiumCarList">
-                        <button className="p-1 md:p-3 rounded-md ml-2 bg-yellow-500">
+                        <button className="p-2 md:p-5 rounded-md ml-2 bg-yellow-500">
                             <h1 className="text-center text-xs md:text-sm font-semibold"> GO TO LISTING </h1>
                         </button>
                     </Link>
@@ -58,7 +58,7 @@ const PremiumCars = () => {
               Quick Approval
                </p> */}
                 <Link to="/PremiumCarList">
-                        <button className="p-1 md:p-3 ml-2 rounded-md  bg-yellow-500">
+                        <button className="p-2 md:p-5 ml-2 rounded-md  bg-yellow-500">
                             <h1 className="text-center text-xs md:text-sm font-semibold"> GO TO LISTING </h1>
                         </button>
                     </Link>
@@ -80,7 +80,7 @@ const PremiumCars = () => {
                 Drive the Dream. Live the Luxury
               </div>
               <Link to="/PremiumCarList">
-                        <button className="p-1 md:p-3 rounded-md ml-2  bg-yellow-500">
+                        <button className="p-2 md:p-5 rounded-md ml-2  bg-yellow-500">
                             <h1 className="text-center text-xs md:text-sm font-semibold"> GO TO LISTING </h1>
                         </button>
                     </Link>

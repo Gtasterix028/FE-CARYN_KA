@@ -49,7 +49,7 @@ const HeroSection = () => {
 
             <Link to="/carlist">
               <button
-                className="p-1 md:p-3 rounded-md ml-2 gap-2 bg-yellow-500"
+                className="p-2 md:p-5 rounded-md ml-2 gap-2 bg-yellow-500"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -92,7 +92,7 @@ const HeroSection = () => {
             </div>
             <Link to="/carlist">
               <button
-                className="p-1 md:p-3 rounded-md ml-2 gap-2 bg-yellow-500"
+                className="p-2 md:p-5 rounded-md ml-2 gap-2 bg-yellow-500"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -134,7 +134,7 @@ const HeroSection = () => {
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-4 w-3/4 lg:w-[40%] font-[sourceSans] text-white text-xs md:text-sm lg:text-sm"
+                className="mb-4 w-3/4 lg:w-[40%] font-[sourceSans] text-white text-xs md:text-sm lg:text-lg"
               >
                 We provide best cars with the best prices. We are expert in car
                 rental. Enjoy your holiday with us. We make your drive
@@ -143,7 +143,7 @@ const HeroSection = () => {
             </div>
             <Link to="/carlist">
               <button
-                className="p-1 md:p-3 rounded-md ml-2 gap-2 bg-yellow-500"
+                className="p-2 md:p-5 rounded-md ml-2 gap-2 bg-yellow-500"
                 style={{
                   display: "flex",
                   alignItems: "center",

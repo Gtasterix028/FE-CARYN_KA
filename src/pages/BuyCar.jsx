@@ -47,7 +47,7 @@ const BuyCar = () => {
 
   return (
     <>
-      <div className="container mx-auto mt-12">
+      {/* <div className="container mx-auto mt-12">
         <div className="grid grid-cols-1 gap-2 md:grid-cols-5 lg:grid-cols-4 lg:gap-6">
           <div className="md:col-span-2 lg:col-span-1 top-0">
             <FilterCars setUrlState={setUrllState} onFilterChange={refetch} />
@@ -55,6 +55,30 @@ const BuyCar = () => {
           <div className="md:col-span-3 lg:col-span-3 no-scrollbar">
             {error?.status === 404 ? (
               <div >
+                <div className="flex justify-center mt-14">
+                  <img
+                    className="w-40"
+                    src={emptyImage}
+                    alt="no data"
+                  />
+                </div>
+                <p className="flex justify-center text-2xl md:text-3xl font-semibold">No Data Available</p>
+              </div>
+            ) : (
+              <GridCarList data={data} error={error} refetch={refetch} />
+            )}
+          </div>
+        </div>
+      </div> */}
+
+<div className="container mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 lg:gap-6">
+          <div className="md:col-span-2 lg:col-span-1 top-0 sticky ">
+            <FilterCars setUrlState={setUrllState} onFilterChange={refetch} />
+          </div>
+          <div className="md:col-span-3 lg:col-span-3 overflow-y-auto h-screen">
+            {error?.status === 404 ? (
+              <div>
                 <div className="flex justify-center mt-14">
                   <img
                     className="w-40"
