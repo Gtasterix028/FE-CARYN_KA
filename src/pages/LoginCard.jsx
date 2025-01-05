@@ -287,35 +287,34 @@ const LoginCard = () => {
 
   return (
     <>
-    <StickyNavbar></StickyNavbar>
+      <StickyNavbar></StickyNavbar>
 
-    <Box
-      sx={{
-        backgroundImage: `url(${backgroundImage})`, // Use the imported background image
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-      }}
-    >
-
-      {/* Overlay to darken the background image */}
       <Box
         sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.3)", // Adjust opacity as needed
+          backgroundImage: `url(${backgroundImage})`, // Use the imported background image
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
         }}
-      />
-      <ToastContainer autoClose={2000} />
+      >
+        {/* Overlay to darken the background image */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.3)", // Adjust opacity as needed
+          }}
+        />
+        <ToastContainer autoClose={2000} />
 
-      {/* Logo Image
+        {/* Logo Image
       <img
         src={cartechlogo2}
         alt="Car Tech Logo"
@@ -329,163 +328,176 @@ const LoginCard = () => {
         }}
       /> */}
 
-      {/* Wrap the Card inside a Box */}
-      <Box
-        sx={{
-          zIndex: 2,
-          // backgroundColor: "rgba(255, 255, 255, 0.8)", 
-          padding: "20px", // Optional: add some padding
-          margin: '20px',
-        }}
-      >
-        <Card style={{ width: "400px",        margin: "40px auto 0", // Increased top margin to 40px
- // 20px top margin, auto left/right, 0 bottom margin
- textAlign: "center" ,
-              backgroundColor: 'transparent', 
+        {/* Wrap the Card inside a Box */}
+        <Box
+          sx={{
+            zIndex: 2,
+            // backgroundColor: "rgba(255, 255, 255, 0.8)",
+            padding: "20px", // Optional: add some padding
+            margin: "20px",
+          }}
+        >
+          <Card
+            style={{
+              width: "400px",
+              margin: "40px auto 0", // Increased top margin to 40px
+              // 20px top margin, auto left/right, 0 bottom margin
+              textAlign: "center",
+              backgroundColor: "transparent",
               borderRadius: "20px", // Optional: add border radius for rounded corners
               padding: "20px", // Optional: add some padding
 
-              border: '2px solid rgba(255, 255, 255, 0.8)', // Set the border color and width
-               backdropFilter: 'blur(10px)', // Adjust the blur radius as needed
-    WebkitBackdropFilter: 'blur(10px)',
+              border: "2px solid rgba(255, 255, 255, 0.8)", // Set the border color and width
+              backdropFilter: "blur(10px)", // Adjust the blur radius as needed
+              WebkitBackdropFilter: "blur(10px)",
               // Set background to transparent
-
-        }}>
-          <CardContent>
-            <Typography variant="h4" gutterBottom color="white">
-              Sign In
-            </Typography>
-            <form onSubmit={handleSubmit}>
-              <TextField
-                label="Email"
-                name="username"
-                type="email"
-                value={formStateData.username}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                required
-                InputProps={{
-                  style: { color: "white" }, // Change text color to white
-                }}
-                InputLabelProps={{
-                  style: { color: "white" }, // Change label color to white
-                }}
-                variant="outlined"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color when not focused
-                    },
-                    '&:hover fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color when focused
-                    },
-                  },
-                  '& .MuiInputBase-input': {
-                    color: 'white', // Text color when focused
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'white', // Label color when not focused
-                  },
-                  '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'white', // Label color when focused
-                  },
-                }}
-              />
-              <TextField
-                label="Password"
-                name="password"
-                type={showPassword ? "text" : "password"}
-                value={formStateData.password}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                required
-                InputProps={{
-                  endAdornment: (
-                    <Button onClick={handleTogglePassword}>
-                      {showPassword ? (
-                        <VisibilityOff style={{ color: "white" }} />
-                      ) : (
-                        <Visibility style={{ color: "white" }} />
-                      )}
-                    </Button>
-                  ),
-                  style: { color: "white" }, // Change text color to white
-                }}
-                InputLabelProps={{
-                  style: { color: "white" }, // Change label color to white
-                }}
-                variant="outlined"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color when not focused
-                    },
-                    '&:hover fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)', // Border color when focused
-                    },
-                  },
-                  '& .MuiInputBase-input': {
-                    color: 'white', // Text color when focused
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'white', // Label color when not focused
-                  },
-                  '& .MuiInputLabel-root.Mui-focused': {
-                    color: 'white', // Label color when focused
-                  },
-                }}
-              />
-              <CardActions>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                >
-                  Sign In
-                </Button>
-              </CardActions>
-            </form>
-          </CardContent>
-          <CardActions
-            style={{ justifyContent: "center", marginBottom: "10px" }}
-          >
-            <Link to="/signup" style={{ textDecoration: "none" }}>
-              <Typography variant="body2" style={{ color: "white" }}>
-                Dont have an account? Sign Up
-              </Typography>
-            </Link>
-          </CardActions>
-
-          {/* Social Media Login Buttons */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "10px",
             }}
           >
-            <IconButton aria-label="Facebook" style={{ color: "peachpuff" }}>
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="Google" style={{ color: "peachpuff" }}>
-              <GoogleIcon />
-            </IconButton>
-            <IconButton aria-label="Google" style={{ color: "peachpuff" }}>
-              <TwitterIcon />
-            </IconButton>
-          </Box>
-        </Card>
+            <CardContent>
+              <Typography variant="h4" gutterBottom color="white">
+                Sign In
+              </Typography>
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  label="Email"
+                  name="username"
+                  type="email"
+                  value={formStateData.username}
+                  onChange={handleChange}
+                  fullWidth
+                  margin="normal"
+                  required
+                  InputProps={{
+                    style: { color: "white" }, // Change text color to white
+                  }}
+                  InputLabelProps={{
+                    style: { color: "white" }, // Change label color to white
+                  }}
+                  variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color when not focused
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color on hover
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color when focused
+                      },
+                    },
+                    "& .MuiInputBase-input": {
+                      color: "white", // Text color when focused
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: "white", // Label color when not focused
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: "white", // Label color when focused
+                    },
+                  }}
+                />
+                <TextField
+                  label="Password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  value={formStateData.password}
+                  onChange={handleChange}
+                  fullWidth
+                  margin="normal"
+                  required
+                  InputProps={{
+                    endAdornment: (
+                      <Button onClick={handleTogglePassword}>
+                        {showPassword ? (
+                          <VisibilityOff style={{ color: "white" }} />
+                        ) : (
+                          <Visibility style={{ color: "white" }} />
+                        )}
+                      </Button>
+                    ),
+                    style: { color: "white" }, // Change text color to white
+                  }}
+                  InputLabelProps={{
+                    style: { color: "white" }, // Change label color to white
+                  }}
+                  variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color when not focused
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color on hover
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.8)", // Border color when focused
+                      },
+                    },
+                    "& .MuiInputBase-input": {
+                      color: "white", // Text color when focused
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: "white", // Label color when not focused
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: "white", // Label color when focused
+                    },
+                  }}
+                />
+                <CardActions>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                  >
+                    Sign In
+                  </Button>
+                </CardActions>
+              </form>
+            </CardContent>
+            <CardActions
+              style={{ justifyContent: "center", marginBottom: "10px" }}
+            >
+              <Link to="/signup" style={{ textDecoration: "none" }}>
+                <Typography variant="body2" style={{ color: "white" }}>
+                  Dont have an account? Sign Up
+                </Typography>
+              </Link>
+            </CardActions>
+
+            <CardActions
+              style={{ justifyContent: "center", marginBottom: "10px" }}
+            >
+              <Link to="/forgetPassword" style={{ textDecoration: "none" }}>
+                <Typography variant="body2" style={{ color: "white" }}>
+                  Forget Password ?
+                </Typography>
+              </Link>
+            </CardActions>
+
+            {/* Social Media Login Buttons */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginBottom: "10px",
+              }}
+            >
+              <IconButton aria-label="Facebook" style={{ color: "peachpuff" }}>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton aria-label="Google" style={{ color: "peachpuff" }}>
+                <GoogleIcon />
+              </IconButton>
+              <IconButton aria-label="Google" style={{ color: "peachpuff" }}>
+                <TwitterIcon />
+              </IconButton>
+            </Box>
+          </Card>
+        </Box>
       </Box>
-    </Box>
     </>
   );
   };

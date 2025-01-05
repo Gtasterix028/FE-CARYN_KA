@@ -66,6 +66,7 @@ export function CardDefault({ data, Carid, refetch }) {
   const token = Cookies.get("token");
   let jwtDecodes;
 
+  // console.log("in cardefault ....."+data)
   if (token) {
     jwtDecodes = jwtDecode(token);
   }
@@ -111,7 +112,7 @@ export function CardDefault({ data, Carid, refetch }) {
       : combinedText;
   return (
     <div className="flex justify-center mx-auto">
-      <Card className="max-w-[19rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  border-indigo-700 border">
+      <Card className=" max-w-[19rem] md:max-w-[22rem] lg:max-w-[24rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  hover:border-indigo-700 border">
         <CardHeader
           floated={false}
           shadow={false}

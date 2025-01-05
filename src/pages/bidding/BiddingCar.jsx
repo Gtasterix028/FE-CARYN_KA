@@ -13,7 +13,7 @@ const BiddingCar = () => {
   const [isConnected, setIsConnected] = useState(false); // New state variable
 
   useEffect(() => {
-    const socket = new SockJS('http://localhost:8080/Aucbidding');
+    const socket = new SockJS(' http://localhost:8080/Aucbidding');
     const stompClient = new Client({
       webSocketFactory: () => socket,
       debug: (str) => {

@@ -682,7 +682,7 @@ import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline"; // Import ico
 const FilterCars = ({ setUrlState }) => {
   const { data: brandData } = useGetOnlyBrandsQuery();
   const brands = brandData?.list.map((item) => item.brand) || [];
-  console.log(brands);
+  // console.log("in filterCars.js.........."+brands);
 
   const [selectedBrand, setSelectedBrand] = useState("");
   const [modelOptions, setModelOptions] = useState([]);
@@ -993,7 +993,7 @@ const FilterCars = ({ setUrlState }) => {
   };
 
   return (
-    <div className="border-2 shadow-lg rounded-lg m-2">
+    <div className="border-2 shadow-lg rounded-lg m-2  fixed  ">
       <div className="flex justify-end mr-5 ">
         <button
           type="button"
@@ -1236,7 +1236,7 @@ const FilterCars = ({ setUrlState }) => {
                 </div>
               )}
               <hr className="border-black border-1 w-full" />
-              {/* BUdgetend/Pricerange end */}
+              {/* *******************************BUdgetend/Pricerange end************************8 */}
 
               {/* 
               <Autocomplete
@@ -1263,7 +1263,8 @@ const FilterCars = ({ setUrlState }) => {
                 renderInput={(params) => <TextField {...params} label="Area" />}
               /> */}
 
-              <div className="mb-1 flex flex-col gap-4">
+
+              <div className=" p-2 mb-1 flex flex-col gap-4">
                 <Box
                   onClick={() => handleToggle("areas")}
                   sx={{
@@ -1322,6 +1323,7 @@ const FilterCars = ({ setUrlState }) => {
                               "&.Mui-checked": {
                                 color: "#6EC207", // Change the color when checked
                               },
+                              marginLeft: "8px",
                             }}
                             onClick={(e) => e.stopPropagation()} // Prevent click from bubbling up
                           />
@@ -1457,6 +1459,7 @@ const FilterCars = ({ setUrlState }) => {
                 )}
               />
             </div>
+            
             <div className="flex gap-5 mt-5 md:flex-col lg:flex">
               <Button type="submit" className="bg-indigo-400">
                 Search

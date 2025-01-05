@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 // WebSocketConnection.jsx
-
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client/dist/sockjs';
@@ -17,7 +16,7 @@ export const WebSocketProvider = ({ children }) => {
   const subscriptions = useRef({});
 
   useEffect(() => {
-    const socket = new SockJS('http://localhost:8080/Aucbidding');
+    const socket = new SockJS(' http://localhost:8080/Aucbidding');
     const stompClient = new Client({
       webSocketFactory: () => socket,
       debug: (str) => {

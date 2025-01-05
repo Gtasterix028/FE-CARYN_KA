@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+  /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import Cookies from "js-cookie";

@@ -19,7 +19,7 @@ export function CardDefault2({ data }) {
 
   
   return (
-    <Card className="mt-1 md:m-0 items-center hover:border hover:border-3 hover:shadow-2xl hover:scale-100">
+    <Card className="mt-1 md:m-0 items-center hover:border hover:border-3 hover:shadow-2xl hover:scale-100  hover:border-5 hover:border-indigo-700 border">
       <CardHeader className="h-full mt-1">
         <Link to={`/carlist/cardetails/${carid}`}>
           <CarouselCustomArrows carId={data.carId} />
@@ -39,12 +39,7 @@ export function CardDefault2({ data }) {
               ? data.year + " " + data.brand + " " + data.model
               : truncatedText}
           </Typography>
-          <div className="flex align-bottom items-baseline gap-3 ">
-            <FaLocationDot  style={{ color: '#000' }} />
-            <div className="  text-base text-gray-700 font-[sourceSans]">
-             {data.area},{data.city}
-            </div>
-          </div>
+          
 
           <p className="text-xs font-medium uppercase flex space-x-2">
             {" "}
@@ -87,8 +82,13 @@ export function CardDefault2({ data }) {
           {" "}
           <Button className="mt-2 mb-4 p-[8px] bg-indigo-500 rounded-lg text-white">View Car</Button>
         </Link> */}
-          {/* <hr /> */}
-       
+          <hr />
+          <div className="flex align-bottom items-baseline gap-3 ">
+            <FaLocationDot  style={{ color: '#000' }} />
+            <div className="  text-base text-gray-700 font-[sourceSans]">
+             {data.area},{data.city}
+            </div>
+          </div>
           {/* <p className="text-sm  text-purple-500 font-[sourceSans]">
             Free Test Drive Today at {data.area}
           </p> */}
