@@ -107,24 +107,24 @@ const OrderDealer = () => {
             </div>
             <div>
               <p className="mt-4 md:mt-0 text-lg">
-                <span className="font-[latto] text-black font-bold">Date:</span>{" "}
+                <span className="font-[sourceSans] text-black font-bold">Date:</span>{" "}
                 {item?.date}
               </p>
               <p className="mt-2 text-lg">
-                <span className="font-[latto] text-black font-bold">
+                <span className="font-[sourceSans] text-black font-bold">
                   Price:{" "}
                 </span>
                 {item?.price}
               </p>
               <div>
-                <div className="font-[latto] mt-2 text-lg font-bold text-black">
+                <div className="font-[sourceSans] mt-2 text-lg font-bold text-black">
                   Contact Details of the User
                 </div>
-                <div className="font-[latto] mt-1 text-lg font-medium text-black">
+                <div className="font-[sourceSans] mt-1 text-lg font-medium text-black">
                   <span className="font-bold text-lg">User Name: </span>
                   {item?.firstName}
                 </div>
-                <div className="font-[latto] text-lg font-medium text-black">
+                <div className="font-[sourceSans] text-lg font-medium text-black">
                   <span className="font-bold text-lg">Contact No:</span>{" "}
                   {item?.mobileNo}
                 </div>

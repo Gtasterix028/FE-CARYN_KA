@@ -3,7 +3,7 @@ import { Routes, Route, Router } from "react-router-dom";
 import { FavoriteProvider } from "./ui/FavoriteContext";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
-import { LoginCard } from "./pages/LoginCard";
+import LoginCard  from "./pages/LoginCard";
 import { SimpleRegistrationForm } from "./pages/SimpleRegistrationForm";
 
 import BuyCar from "./pages/BuyCar";
@@ -127,7 +127,7 @@ export default function App() {
           <Route path="/reset-Password" element={<ResetPassword />} />
           <Route path="signin" element={<LoginCard />} />
           <Route path="/changePassword" element={<ChangePassword />} />
-          <Route path="/carlist" element={<BuyCar />} />
+          <Route path="/carlist" element={<BuyCar/>} />
           <Route path="/premiumcarlist" element={<PremiumCarList />} />
           <Route path="/carimagecarousel" element={<CarImageCarousel />} />
           <Route path="/carlistadmin" element={<AdminCarList />} />

@@ -7,6 +7,7 @@ export default withMT({
       fontFamily: {
         latto: ["Latto", "sans-serif"],
         Merriweather: ["Merriweather", "sans-serif"],
+         sourceSans: ["Source Sans Pro", "sans-serif"],
       },
       keyframes: {
         slidein: {

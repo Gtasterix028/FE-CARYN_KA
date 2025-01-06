@@ -18,6 +18,12 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavoriteCar, removeFavoriteCar } from "../pages/favoritesSlice";
+import DriveEtaIcon from '@mui/icons-material/DriveEta'; // Example icon for KM
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation'; // Example icon for fuel type
+import TransmissionIcon from '@mui/icons-material/Settings'; // Example icon for transmission (you can choose a better one)
+import { FaArrowRight } from 'react-icons/fa';
+import { FaLocationDot } from "react-icons/fa6";
+import CheckCircle from '@mui/icons-material/CheckCircle';
 
 function RatedIcon() {
   return (
@@ -51,7 +57,7 @@ function UnratedIcon() {
   );
 }
 
-export function CardDefault({ data, Carid, refetch }) {
+export function CardDefault({ data, Carid, refetch,isLoading }) {
   const dispatch = useDispatch();
   const favoriteCars = useSelector((state) => state.favorites.favoriteCars);
   const [isHovered, setIsHovered] = useState(false);
@@ -60,6 +66,7 @@ export function CardDefault({ data, Carid, refetch }) {
   const token = Cookies.get("token");
   let jwtDecodes;
 
+  // console.log("in cardefault ....."+data)
   if (token) {
     jwtDecodes = jwtDecode(token);
   }
@@ -98,14 +105,27 @@ export function CardDefault({ data, Carid, refetch }) {
     }
   };
 
-  const combinedText = `${data.brand} ${data.model}`;
+  const combinedText = `${data.year} ${data.brand} ${data.model}`;
   const truncatedText =
     combinedText.length > 25
       ? combinedText.substring(0, 22) + "..."
       : combinedText;
   return (
     <div className="flex justify-center mx-auto">
-      <Card className="max-w-[19rem] overflow-hidden hover:border hover:border-3 hover:shadow-2xl hover:scale-105 border-indigo-200 border">
+
+{isLoading || !data ? (
+    // Skeleton Card when data is loading
+    <div className="max-w-[12rem] md:max-w-[15rem] lg:max-w-[17rem] max-h-[28rem] md:max-h-[25rem] lg:max-h-[28rem] overflow-hidden p-4 border border-gray-300 rounded-lg shadow-lg animate-pulse">
+      {/* Skeleton Image */}
+      <div className="h-32 bg-gray-200 rounded-lg mb-4"></div>
+      {/* Skeleton Title */}
+      <div className="h-4 bg-gray-200 rounded-lg mb-2"></div>
+      {/* Skeleton Subtext */}
+      <div className="h-4 bg-gray-200 rounded-lg mb-4"></div>
+      {/* Skeleton Text */}
+      <div className="h-6 bg-gray-200 rounded-lg mb-2"></div>
+    </div>  ) : (
+      <Card className=" max-w-[12rem] md:max-w-[15rem] lg:max-w-[17rem] max-h-[28rem] md:max-h-[25rem] lg:max-h-[28rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  hover:border-indigo-700 border">
         <CardHeader
           floated={false}
           shadow={false}
@@ -132,32 +152,36 @@ export function CardDefault({ data, Carid, refetch }) {
                 </div>
               </div>
             ) : null}
-            <Typography>{data.year}</Typography>
+            {/* <Typography>{data.year}</Typography> */}
               <Typography
                 variant="h5"
                 color="blue-gray"
-                className="mb-2"
+                className="mb-2  text-base md:text-lg lg:text-xl"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                {isHovered ? data.brand + " " + data.model : truncatedText}
+                {isHovered ? data.year+" "+data.brand + " " + data.model : truncatedText}
                 {/* {`${data.brand} ${data.model}`.length > 25 ? `${data.brand} ${data.model}`.substring(0, 22) + '...' : `${data.brand} ${data.model}`} */}
               </Typography>
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              {data.title}
-            </Typography>
-            <p className="text-sm uppercase mb-3 flex-wrap gap-2">
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.kmDriven}KM
-              </span>
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.fuelType}
-              </span>
-              <span className="bg-gray-200 p-[5px] rounded-sm mr-2 text-black text-xs">
-                {data.transmission}
-              </span>
-            </p>
-            <Typography variant="h6" className="font-bold text-black text-xl">
+
+           
+
+
+              <p className=" sm:text-[0.400rem] md:text-[0.580rem] lg:text-[0.666rem] font-medium uppercase flex space-x-0 flex-wrap">
+              <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans] ">
+    <DriveEtaIcon className=" text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]"  style={{ color: "#6EC207"  }}/> {/* KM Driven Icon */}
+    {data.kmDriven} KM
+  </span>
+  <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans]">
+    <LocalGasStationIcon className=" text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]h-2 w-2 sm:h-1 sm:w-1 md:h-2 md:w-2 lg:h-3 lg:w-3" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
+    {data.fuelType}
+  </span>
+  <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans]">
+    <TransmissionIcon className="text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]" style={{ color: "#6EC207"  }} /> {/* Transmission Icon */}
+    {data.transmission}
+  </span>
+</p>
+            <Typography variant="h6" className="font-bold text-blue-gray-900  text-lg md:text-xl ">
               ₹ {data.price}
             </Typography>
             {/* <Link to={`/carlist/cardetails/${data.carId}`}>
@@ -165,11 +189,28 @@ export function CardDefault({ data, Carid, refetch }) {
               View Car
             </button>
           </Link> */}
+           <Link to={`/carlist/cardetails/${data.carId}`}>
+          {" "}
+          <Typography  variant="h6"  className="mb-2 mt-2  text-sm md:text-base"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
+            View Car Details  <FaArrowRight style={{ color: 'green', fontSize: '15px' }} />
+          </Typography>
+          </Link>
             <hr />
-            <p className="text-sm">Free Test Drive Today at {data.area}</p>
+
+              <div className="flex align-bottom items-baseline gap-3    text-sm md:text-base text-gray-700 ">
+              {/* <Typography variant="h10" color="blue-gray" className="mb-2">
+              <CheckCircle style={{ color: 'green' }}/>  {data.title}
+            </Typography> */}
+            <FaLocationDot  style={{ color: '#000' }} />
+            <div className="  text-base text-gray-700 font-[sourceSans]">
+             {data.area},{data.city}
+            </div>
+          </div>
+            {/* <p className="text-sm text-purple-500 font-[sourceSans]">Free Test Drive Today at {data.area}</p> */}
          
         </CardBody>
       </Card>
+      )}
     </div>
   );
 }

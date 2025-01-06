@@ -14,6 +14,9 @@ import {
   ListItem,
   Menu,
 } from "@material-tailwind/react";
+// import { FaUser  } from 'react-icons/fa'; // Import the icon you want to use
+import PersonOutline from '@mui/icons-material/PersonOutline';
+
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -703,7 +706,7 @@ function ConfermListMenu() {
   );
 
   return (
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-[#8a90d4] border-none">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-[#19376D] border-none">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Link to={"/"}>
           {/* <Typography className="mr-4 cursor-pointer py-1.5 font-bold text-2xl ">
@@ -731,11 +734,11 @@ function ConfermListMenu() {
               />
             ) : (
               <>
-                <Link to="/signin">
+                {/* <Link to="/signin">
                   <Button
                     variant="text"
                     size="sm"
-                    className="hidden lg:inline-block text-white"
+                    className="hidden lg:inline-block  bg-lime-300 text-white"
                   >
                     <span>Sign In</span>
                   </Button>
@@ -745,12 +748,36 @@ function ConfermListMenu() {
                   <Button
                     variant="gradient"
                     size="sm"
-                    color="indigo"
+                    color="lime"
                     className="hidden lg:inline-block bg-indigo-400"
                   >
                     <span>Sign Up</span>
                   </Button>
-                </Link>
+                </Link> */}
+
+                <div className="flex items-center">
+                  <PersonOutline className="mr-2 " style={{ color: "white" }} />
+
+                  <Link
+                    to="/signin"
+                    className=" lg:inline-flex items-center"
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">
+                      Login
+                    </span>
+                  </Link>
+                  <span className="text-lg text-white font-[sourceSans] mr-2">
+                    /
+                  </span>
+                  <Link
+                    to="/signup"
+                    className=" lg:inline-flex items-center "
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">
+                      Register
+                    </span>
+                  </Link>
+                </div>
               </>
             )}
           </div>
@@ -798,23 +825,19 @@ function ConfermListMenu() {
       <Collapse open={openNav}>
         {navList}
         {token ? null : (
-          <div className="flex items-center gap-x-1">
-            <Link to="/signin">
-              <Button fullWidth variant="text" size="sm" className="">
-                <span>Sign In</span>
-              </Button>
-            </Link>
+          <div className="flex items-center">
+            <PersonOutline className="mr-2 " style={{ color: "white" }} />
 
-            <Link to="/signup">
-              <Button
-                fullWidth
-                color="indigo"
-                variant="gradient"
-                size="sm"
-                className=""
-              >
-                <span>Sign up</span>
-              </Button>
+            <Link to="/signin" className=" lg:inline-flex items-center">
+              <span className="text-lg text-white font-[sourceSans] mr-2">
+                Login
+              </span>
+            </Link>
+            <span className="text-lg text-white font-[sourceSans] mr-2">/</span>
+            <Link to="/signup" className=" lg:inline-flex items-center ">
+              <span className="text-lg text-white font-[sourceSans] mr-2">
+                Register
+              </span>
             </Link>
           </div>
         )}

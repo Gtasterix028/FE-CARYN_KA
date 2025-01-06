@@ -167,29 +167,29 @@ console.log(biddingdata)
             </div>
             <div>
               <p className="mt-4 mb-2 text-lg">
-                <span className="font-[latto] text-black font-bold">
+                <span className="font-[sourceSans] text-black font-bold">
                   Car Name:
                 </span>
-                <span className="font-[latto]">
+                <span className="font-[sourceSans]">
                   {" "}
                   {item?.brand} {item?.model}
                 </span>
               </p>
               <p className="mt-4 mb-2 text-lg">
-                <span className="font-[latto] text-black font-bold">
+                <span className="font-[sourceSans] text-black font-bold">
                   Varient:
                 </span>
-                <span className="font-[latto]"> {item?.variant}</span>
+                <span className="font-[sourceSans]"> {item?.variant}</span>
               </p>
               <p className="mt-4 md:mt-0 text-lg">
-                <span className="font-[latto] text-black font-bold">Date:</span>{" "}
-                <span className="font-[latto]"> {item?.date}</span>
+                <span className="font-[sourceSans] text-black font-bold">Date:</span>{" "}
+                <span className="font-[sourceSans]"> {item?.date}</span>
               </p>
               <p className="mt-2 text-lg">
-                <span className="font-[latto] text-black font-bold">
+                <span className="font-[sourceSans] text-black font-bold">
                   Price:{" "}
                 </span>
-                <span className="font-[latto]">{item?.price}</span>
+                <span className="font-[sourceSans]">{item?.price}</span>
               </p>
 
               <div className="flex gap-2 align-middle items-center">

@@ -53,10 +53,10 @@ const BiddingKnowYourCar = ({
                 <IoLogoModelS className="w-12 h-8" />
               </div>
               <div className="flex flex-col">
-                <div className="font-bold text-black font-[latto] text-xl">
+                <div className="font-bold text-black font-[sourceSans] text-xl">
                   Top Model
                 </div>
-                <div className="font-[latto] text-lg">
+                <div className="font-[sourceSans] text-lg">
                   Top varient that is equipped with all features of the model
                 </div>
               </div>
@@ -66,10 +66,10 @@ const BiddingKnowYourCar = ({
                 <GrServices className="w-12 h-8" />
               </div>
               <div className="flex flex-col">
-                <div className="font-bold text-black font-[latto] text-xl">
+                <div className="font-bold text-black font-[sourceSans] text-xl">
                   Regularly Serviced
                 </div>
-                <div className="font-[latto] text-lg">
+                <div className="font-[sourceSans] text-lg">
                   Top varient that is equipped with all features of the model
                 </div>
               </div>
@@ -80,10 +80,10 @@ const BiddingKnowYourCar = ({
               <MdOutlineAirlineSeatReclineExtra className="w-12 h-8" />
             </div>
             <div className="flex flex-col">
-              <div className="font-bold text-black font-[latto] text-xl">
+              <div className="font-bold text-black font-[sourceSans] text-xl">
                 Standard Safty Features
               </div>
-              <div className="font-[latto] text-lg">
+              <div className="font-[sourceSans] text-lg">
                 Top varient that is equipped with all <br />
                 features of the model
               </div>
@@ -93,22 +93,22 @@ const BiddingKnowYourCar = ({
           <div className="w-full grid grid-cols-1 ml-5 md:ml-0 gap-y-4  md:grid md:grid-cols-3 md:gap-y-8 mt-5 px-8">
               <div className="flex items-center gap-5">
                 <div>
-                  <FaRegWindowMaximize className="w-5 h-5" />
+                  <FaRegWindowMaximize className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Reg Number</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto] uppercase">
+                  <div className="font-[sourceSans]">Reg Number</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans] uppercase">
                     {registration}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <FaCalendarDay className="w-5 h-5" />
+                  <FaCalendarDay className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Make Year</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Make Year</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     {year}
                   </div>
                 </div>
@@ -118,19 +118,19 @@ const BiddingKnowYourCar = ({
                   <FaRoad className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Reg Number</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Reg Number</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     ABC-1234567
                   </div>
                 </div>
               </div> */}
               <div className="flex items-center gap-5">
                 <div>
-                  <BsFillFuelPumpFill className="w-5 h-5" />
+                  <BsFillFuelPumpFill className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Fuel Type</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Fuel Type</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     {fuelType}
                   </div>
                 </div>
@@ -141,8 +141,8 @@ const BiddingKnowYourCar = ({
                   <PiEngineFill className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Engine Capacity</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Engine Capacity</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     1551 cc
                   </div>
                 </div>
@@ -153,8 +153,8 @@ const BiddingKnowYourCar = ({
                   <FaKey className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Spare Key</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Spare Key</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     Yes
                   </div>
                 </div>
@@ -162,33 +162,33 @@ const BiddingKnowYourCar = ({
             
               <div className="flex items-center gap-5">
                 <div>
-                  <GiCarWheel className="w-5 h-5" />
+                  <GiCarWheel className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">Transmission</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Transmission</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     {transmission}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <MdDriveEta className="w-5 h-5" />
+                  <MdDriveEta className="w-5 h-5"  style={{ color: '#6EC207' }} />
                 </div>
                 <div className="flex flex-col">
-                  <div className="font-[latto]">KM Driven</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">KM Driven</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     {kmDriven}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-5">
                 <div>
-                  <IoIosMan className="w-5 h-5" />
+                  <IoIosMan className="w-5 h-5" style={{ color: '#6EC207' }}  />
                 </div>
                 <div className="flex flex-col ">
-                  <div className="font-[latto]">Ownership</div>
-                  <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                  <div className="font-[sourceSans]">Ownership</div>
+                  <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                     {ownerSerial}
                   </div>
                 </div>
@@ -197,11 +197,11 @@ const BiddingKnowYourCar = ({
               {carInsurance && (
                 <div className="flex items-center gap-5">
                   <div>
-                    <AiFillInsurance className="w-5 h-5" />
+                    <AiFillInsurance className="w-5 h-5" style={{ color: '#6EC207' }}  />
                   </div>
                   <div className="flex flex-col">
-                    <div className="font-[latto]">Insurance Type</div>
-                    <div className="font-bold text-black text-sm mt-2 font-[latto]">
+                    <div className="font-[sourceSans]">Insurance Type</div>
+                    <div className="font-bold text-black text-sm mt-2 font-[sourceSans]">
                       {carInsuranceType}
                     </div>
                   </div>

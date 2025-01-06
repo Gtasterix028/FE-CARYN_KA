@@ -57,37 +57,37 @@ const DealerCarConfirmBooking = ({ carId }) => {
                   <Chip
                     variant="outlined"
                     value={`${car?.date}`}
-                    className="rounded-full font-[latto] text-sm"
+                    className="rounded-full font-[sourceSans] text-sm"
                   />
                   <Chip
                     color="amber"
                     value={`${car?.carStatus}`}
-                    className="font-[latto] text-sm"
+                    className="font-[sourceSans] text-sm"
                   />
                 </div>
                 <div className="w-full flex flex-col justify-center">
                   <div className="pl-4 mt-2 flex flex-col justify-center">
                     <div>
-                      <div className="text-lg mt-1 font-[latto] font-medium text-black">
-                        <span className="font-bold font-[latto]">
+                      <div className="text-lg mt-1 font-[sourceSans] font-medium text-black">
+                        <span className="font-bold font-[sourceSans]">
                           Car Price:
                         </span>{" "}
                         ₹{car?.price}
                       </div>
-                      <div className="mt-1 font-[latto] text-lg font-medium text-black">
+                      <div className="mt-1 font-[sourceSans] text-lg font-medium text-black">
                         <span className="font-bold">Asking Price:</span> ₹
                         {car?.askingPrice}
                       </div>
                     </div>
                     <div>
-                      <div className="mt-1 font-[latto] text-lg font-bold text-black">
+                      <div className="mt-1 font-[sourceSans] text-lg font-bold text-black">
                         Contact Details of the User
                       </div>
-                      <div className="mt-1 font-[latto] text-lg font-medium text-black">
+                      <div className="mt-1 font-[sourceSans] text-lg font-medium text-black">
                         <span className="font-bold">User Name:</span>{" "}
                         {car?.username}
                       </div>
-                      <div className="mt-1 font-[latto] text-lg font-medium text-black">
+                      <div className="mt-1 font-[sourceSans] text-lg font-medium text-black">
                         <span className="font-bold">Contact No:</span>{" "}
                         {car?.mobileNumber}
                       </div>
@@ -96,7 +96,7 @@ const DealerCarConfirmBooking = ({ carId }) => {
                           <Link to={`/carlist/cardetails/${car?.carId}`}>
                             <Button
                               color="blue"
-                              className="flex items-center text-xs font-[latto]"
+                              className="flex items-center text-xs font-[sourceSans]"
                             >
                               <span>Car Details</span>
                               <svg
@@ -119,7 +119,7 @@ const DealerCarConfirmBooking = ({ carId }) => {
                         <div>
                           <Button
                             color="green"
-                            className="flex items-center font-[latto]"
+                            className="flex items-center font-[sourceSans]"
                             onClick={handleOpen}
                           >
                             <span>Confirm Request</span>

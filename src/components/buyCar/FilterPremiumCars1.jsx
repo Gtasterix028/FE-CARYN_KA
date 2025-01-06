@@ -253,13 +253,13 @@ const FilterPremiumCars1 = ({ setUrlState }) => {
   return (
     <div className="border-2 shadow-lg rounded-lg m-2">
       <div className="flex justify-between">
-        <div className="-mt-10 text-black text-3xl font-[latto] font-bold flex hover:rounded-2xl hover:shadow-2xl">
+        <div className="-mt-10 text-black text-3xl font-[sourceSans] font-bold flex hover:rounded-2xl hover:shadow-2xl">
           Premium Cars
         </div>
         <div>
           <button
             type="button"
-            className="-mt-10 text-black text-lg font-bold font-[latto] flex hover:rounded-2xl hover:shadow-2xl "
+            className="-mt-10 text-black text-lg font-bold font-[sourceSans] flex hover:rounded-2xl hover:shadow-2xl "
             onClick={() => setShowFilters(!showFilters)}
           >
             <span className="mt-[6px] mr-1">
@@ -281,7 +281,7 @@ const FilterPremiumCars1 = ({ setUrlState }) => {
                 <Typography
                   variant="h6"
                   color="blue-gray"
-                  className=" font-bold text-black font-[latto] text-lg"
+                  className=" font-bold text-black font-[sourceSans] text-lg"
                 >
                   Price Range
                 </Typography>
@@ -292,19 +292,19 @@ const FilterPremiumCars1 = ({ setUrlState }) => {
                 <div className="flex flex-col gap-3 justify-between">
                   <div className="flex justify-between">
                     <div className="flex">
-                      <span className="text-black p-2 font-[latto]">
+                      <span className="text-black p-2 font-[sourceSans]">
                         ₹{formattedAmountMin}
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="text-black p-2 font-[latto]">
+                      <span className="text-black p-2 font-[sourceSans]">
                         ₹{formattedAmountMax}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-center">
-                  <div className="flex text-center font-bold font-[latto] text-black">
+                  <div className="flex text-center font-bold font-[sourceSans] text-black">
                     ₹15L
                   </div>
                   <div className="w-full flex items-center px-2 mx-1">
@@ -320,7 +320,7 @@ const FilterPremiumCars1 = ({ setUrlState }) => {
                       disableSwap
                     />
                   </div>
-                  <div className="flex text-center font-bold font-[latto] text-black">
+                  <div className="flex text-center font-bold font-[sourceSans] text-black">
                     ₹10Cr
                   </div>
                 </div>

@@ -20,6 +20,7 @@ import { Link, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import Profile from "../Profile/Profile";
+import PersonOutline from '@mui/icons-material/PersonOutline';
 
 import { jwtDecode } from "jwt-decode";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
@@ -596,17 +597,26 @@ const salesPersonId = token ? jwtDecodes?.salesPersonId : null;
             />
           ) : (
             <>
-              <Link to="/signin">
-                <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-                  <span className="text-white">Sign In</span>
-                </Button>
-              </Link>
+             
+             <div className="flex items-center">
+                {/* <FaUser className="mr-2 "  style={{ color: 'white' }}/> Icon with margin */}
+                <PersonOutline  className="mr-2 "  style={{ color: 'white' }}  />
 
-              <Link to="/signup">
-                <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-                  <span>Sign Up</span>
-                </Button>
-              </Link>
+                  <Link
+                    to="/signin"
+                    className="hidden lg:inline-flex items-center"
+                  >
+                 
+                    <span className="text-lg text-white font-[sourceSans] mr-2">Login</span>
+                  </Link>
+                  <span className="text-lg text-white font-[sourceSans] mr-2" ></span>
+                  <Link
+                    to="/signup"
+                    className="hidden lg:inline-flex items-center "
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">Register</span>
+                  </Link>
+                </div>
             </>
           )}
         </div>
@@ -654,19 +664,28 @@ const salesPersonId = token ? jwtDecodes?.salesPersonId : null;
     <Collapse open={openNav}>
       {navList}
       {token ? null : (
-        <div className="flex items-center gap-x-1">
-          <Link to="/signin">
-            <Button fullWidth variant="text" size="sm" className="">
-              <span className="">Sign In</span>
-            </Button>
-          </Link>
+       
+         
+         <div className="flex items-center">
+                {/* <FaUser className="mr-2 "  style={{ color: 'white' }}/> Icon with margin */}
+                <PersonOutline  className="mr-2 "  style={{ color: 'white' }}  />
 
-          <Link to="/signup">
-            <Button fullWidth variant="gradient" size="sm" className="">
-              <span>Sign up</span>
-            </Button>
-          </Link>
-        </div>
+                  <Link
+                    to="/signin"
+                    className=" lg:inline-flex items-center"
+                  >
+                 
+                    <span className="text-lg text-white font-[sourceSans] mr-2">Login</span>
+                  </Link>
+                  <span className="text-lg text-white font-[sourceSans] mr-2" >/</span>
+                  <Link
+                    to="/signup"
+                    className=" lg:inline-flex items-center "
+                  >
+                    <span className="text-lg text-white font-[sourceSans] mr-2">Register</span>
+                  </Link>
+                </div>
+        
       )}
     </Collapse>
   </Navbar>

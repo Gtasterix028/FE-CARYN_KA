@@ -4,10 +4,13 @@ import BrandList from "../components/home/BrandList";
 import HeroSection from "../components/home/HeroSection";
 import { StickyNavbar } from "../components/navbars/StickyNavbar";
 import FeaturedCars from "./FeaturedCars";
-import { useFilterCarQuery } from "../services/carAPI";
+import { useGetRecentCarQuery } from "../services/carAPI";
 
 const Home = () => {
-  const { data, error } = useFilterCarQuery();
+  // const { data, error } = useFilterCarQuery();
+  const { data, error } = useGetRecentCarQuery();
+
+
 
   return (
     <div>

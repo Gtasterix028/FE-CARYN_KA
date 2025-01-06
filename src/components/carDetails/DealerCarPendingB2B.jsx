@@ -60,37 +60,37 @@ const DealerCarPendingB2B = ({ beadingCarId, status }) => {
                   <Chip
                     variant="outlined"
                     value={`${car?.date}`}
-                    className="rounded-full font-[latto] text-sm"
+                    className="rounded-full font-[sourceSans] text-sm"
                   />
                   <Chip
                     color="amber"
                     value={`${status}`}
-                    className="font-[latto] text-sm"
+                    className="font-[sourceSans] text-sm"
                   />
                 </div>
                 <div className="w-full flex flex-col justify-center">
                   <div className="pl-4 mt-2 flex flex-col justify-center">
                     <div>
-                      {/* <div className="text-lg mt-1 font-[latto] font-medium text-black">
-                        <span className="font-bold font-[latto]">
+                      {/* <div className="text-lg mt-1 font-[sourceSans] font-medium text-black">
+                        <span className="font-bold font-[sourceSans]">
                           Car Price:
                         </span>{" "}
                         ₹{car?.price}
                       </div> */}
                       <p className="mt-4 mb-2 text-lg">
-                        <span className="font-[latto] text-black font-bold">
+                        <span className="font-[sourceSans] text-black font-bold">
                           Car Name:
                         </span>
-                        <span className="font-[latto]">
+                        <span className="font-[sourceSans]">
                           {" "}
                           {car?.brand} {car?.model}
                         </span>
                       </p>
                       <p className="mt-4 mb-2 text-lg">
-                        <span className="font-[latto] text-black font-bold">
+                        <span className="font-[sourceSans] text-black font-bold">
                           Varient:
                         </span>
-                        <span className="font-[latto]"> {car?.variant}</span>
+                        <span className="font-[sourceSans]"> {car?.variant}</span>
                       </p>
                     </div>
                     <div>
@@ -101,7 +101,7 @@ const DealerCarPendingB2B = ({ beadingCarId, status }) => {
                           >
                             <Button
                               color="blue"
-                              className="flex items-center text-xs font-[latto]"
+                              className="flex items-center text-xs font-[sourceSans]"
                             >
                               <span>Car Details</span>
                               <svg
@@ -124,7 +124,7 @@ const DealerCarPendingB2B = ({ beadingCarId, status }) => {
                         {/* <div>
                           <Button
                             color="green"
-                            className="flex items-center font-[latto]"
+                            className="flex items-center font-[sourceSans]"
                             onClick={handleOpen}
                           >
                             <span>Confirm Request</span>

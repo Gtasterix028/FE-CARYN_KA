@@ -2,13 +2,12 @@
 /* eslint-disable no-unused-vars */
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Cookies from "js-cookie";
-
 // import { useNavigate } from 'react-router-dom';
 
 export const apiSlice = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://cffffftasting-production.up.railway.app",
+    baseUrl: " http://localhost:8080",
     prepareHeaders: (headers, { getState }) => {
       // console.log(headers, "prepareHeaders");
       // console.log(getState().auth.token);

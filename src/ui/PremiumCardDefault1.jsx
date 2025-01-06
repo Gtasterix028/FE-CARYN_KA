@@ -129,7 +129,7 @@ export function PremiumCardDefault1({ data, Carid, refetch }) {
             ) : null}
 
             <div className="p-2">
-              <h3 className="text-xl font-[latto] font-bold text-black">
+              <h3 className="text-xl font-[sourceSans] font-bold text-black">
                 ₹ {data.price}
               </h3>
               <Typography
@@ -147,13 +147,13 @@ export function PremiumCardDefault1({ data, Carid, refetch }) {
                   <p className="text-xs font-semibold text-gray-500">
                     REG. YEAR
                   </p>
-                  <p className="text-sm font-semibold text-black font-[latto]">
+                  <p className="text-sm font-semibold text-black font-[sourceSans]">
                     {data.year}
                   </p>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-gray-500">KMS</p>
-                  <p className="text-sm font-semibold text-black font-[latto]">
+                  <p className="text-sm font-semibold text-black font-[sourceSans]">
                     {data.kmDriven}
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export function PremiumCardDefault1({ data, Carid, refetch }) {
                   <p className="text-xs font-semibold text-gray-500">
                     FUEL TYPE
                   </p>
-                  <p className="text-sm font-semibold text-black font-[latto] uppercase">
+                  <p className="text-sm font-semibold text-black font-[sourceSans] uppercase">
                     {data.fuelType}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export function PremiumCardDefault1({ data, Carid, refetch }) {
                   <p className="text-xs font-semibold text-gray-500">
                     REG. STATE
                   </p>
-                  <p className="text-sm font-semibold text-black font-[latto] uppercase">
+                  <p className="text-sm font-semibold text-black font-[sourceSans] uppercase">
                     {data.city}
                   </p>
                 </div>

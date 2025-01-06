@@ -5,7 +5,7 @@ import { apiSlice } from "./apiSlice";
 export const carApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     filterCar: builder.query({
-      query: (urlState) => {
+      query: ({ urlState = {}, pageNO = 2 }) => {
         // Destructure and provide default values
         const {
           MinPrice = "",
@@ -17,9 +17,10 @@ export const carApi = apiSlice.injectEndpoints({
           Transmission = "",
           FuleType = "",
         } = urlState || {};
+        console.log(`API called with page: ${pageNO}`);
 
         return {
-          url: `/cars/mainFilter?minPrice=${MinPrice}&maxPrice=${MaxPrice}&area=${Area}&year=${Year}&brand=${Brand}&model=${Model}&transmission=${Transmission}&fuelType=${FuleType}`,
+          url: `/cars/mainFilterPage?minPrice=${MinPrice}&maxPrice=${MaxPrice}&area=${Area}&year=${Year}&brand=${Brand}&model=${Model}&transmission=${Transmission}&fuelType=${FuleType}&pageNo=${pageNO}`,
           method: "GET",
         };
       },
@@ -46,6 +47,8 @@ export const carApi = apiSlice.injectEndpoints({
       },
       providesTags: ["CAR", "Dealer"],
     }),
+
+
     getCarById: builder.query({
       query: (carId) => ({
         url: `/cars/getCar?carId=${carId}`,
@@ -76,6 +79,17 @@ export const carApi = apiSlice.injectEndpoints({
       }),
       providesTags: ["CAR", "Inspector"],
     }),
+
+    //Get Recently added car
+
+    getRecentCar: builder.query({
+      query: () => ({
+        url: `/cars/top4Cars  `,
+        method: "GET",
+      }),
+      providesTags: ["CAR", "Inspector"],
+    }),
+
     bookingRequest: builder.mutation({
       query: (formData) => ({
         url: `/booking/request`,
@@ -224,6 +238,9 @@ export const carApi = apiSlice.injectEndpoints({
       providesTags: ["User"],
     }),
 
+
+    // *************unneccessory used api
+  
     CarFavoriteAddRemove: builder.query({
       query: ({ carid, useid }) => ({
         url: `/saveCar/getByCarAndUserId?userId=${useid}&carId=${carid}`,
@@ -296,4 +313,5 @@ export const {
   useCarStatusActiveQuery,
   useCarCountByCartypeQuery,
   useCarsByCartypeQuery,
+  useGetRecentCarQuery
 } = carApi;
