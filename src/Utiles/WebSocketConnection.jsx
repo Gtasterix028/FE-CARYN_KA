@@ -16,7 +16,7 @@ export const WebSocketProvider = ({ children }) => {
   const subscriptions = useRef({});
 
   useEffect(() => {
-    const socket = new SockJS(' http://localhost:8080/Aucbidding');
+    const socket = new SockJS(' https://becar.up.railway.app/Aucbidding');
     const stompClient = new Client({
       webSocketFactory: () => socket,
       debug: (str) => {
