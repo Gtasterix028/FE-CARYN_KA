@@ -19,7 +19,7 @@ export function CardDefault2({ data }) {
 
   
   return (
-    <Card className="mt-1 md:m-0 items-center hover:border hover:border-3 hover:shadow-2xl hover:scale-100  hover:border-5 hover:border-indigo-700 border">
+    <Card className=" max-w-[15rem] md:max-w-[15rem] lg:max-w-[20rem]   overflow-hidden hover:border hover:border-5 hover:shadow-2xl  hover:border-indigo-700 border">
       <CardHeader className="h-full mt-1">
         <Link to={`/carlist/cardetails/${carid}`}>
           <CarouselCustomArrows carId={data.carId} />
@@ -41,24 +41,24 @@ export function CardDefault2({ data }) {
           </Typography>
           
 
-          <p className="text-xs font-medium uppercase flex space-x-2">
-            {" "}
+          <p className=" sm:text-[0.400rem] md:text-[0.580rem] lg:text-[0.666rem] font-medium uppercase flex space-x-0 flex-wrap">
+          {" "}
             {/* Use space-x-2 for horizontal spacing */}
             <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
-              <DriveEtaIcon className="mr-1" style={{ color: "#6EC207" }} />{" "}
+              <DriveEtaIcon className="text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]" style={{ color: "#6EC207" }} />{" "}
               {/* KM Driven Icon */}
               {data.kmDriven} KM
             </span>
             <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
               <LocalGasStationIcon
-                className="mr-1"
+                className="text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]"
                 style={{ color: "#6EC207" }}
               />{" "}
               {/* Fuel Type Icon */}
               {data.fuelType}
             </span>
             <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
-              <TransmissionIcon className="mr-1" style={{ color: "#6EC207" }} />{" "}
+              <TransmissionIcon className="text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]" style={{ color: "#6EC207" }} />{" "}
               {/* Transmission Icon */}
               {data.transmission}
             </span>
@@ -73,7 +73,7 @@ export function CardDefault2({ data }) {
 
   <Link to={`/carlist/cardetails/${data.carId}`}>
           {" "}
-          <Typography  variant="h6"  className="mb-2 mt-2"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
+          <Typography  variant="h6"  className="mb-2 mt-2  text-sm md:text-base"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
             View Car Details  <FaArrowRight style={{ color: 'green', fontSize: '15px' }} />
           </Typography>
           </Link>

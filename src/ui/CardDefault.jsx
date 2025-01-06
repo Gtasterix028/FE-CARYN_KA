@@ -57,7 +57,7 @@ function UnratedIcon() {
   );
 }
 
-export function CardDefault({ data, Carid, refetch }) {
+export function CardDefault({ data, Carid, refetch,isLoading }) {
   const dispatch = useDispatch();
   const favoriteCars = useSelector((state) => state.favorites.favoriteCars);
   const [isHovered, setIsHovered] = useState(false);
@@ -112,7 +112,20 @@ export function CardDefault({ data, Carid, refetch }) {
       : combinedText;
   return (
     <div className="flex justify-center mx-auto">
-      <Card className=" max-w-[19rem] md:max-w-[22rem] lg:max-w-[24rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  hover:border-indigo-700 border">
+
+{isLoading || !data ? (
+    // Skeleton Card when data is loading
+    <div className="max-w-[12rem] md:max-w-[15rem] lg:max-w-[17rem] max-h-[28rem] md:max-h-[25rem] lg:max-h-[28rem] overflow-hidden p-4 border border-gray-300 rounded-lg shadow-lg animate-pulse">
+      {/* Skeleton Image */}
+      <div className="h-32 bg-gray-200 rounded-lg mb-4"></div>
+      {/* Skeleton Title */}
+      <div className="h-4 bg-gray-200 rounded-lg mb-2"></div>
+      {/* Skeleton Subtext */}
+      <div className="h-4 bg-gray-200 rounded-lg mb-4"></div>
+      {/* Skeleton Text */}
+      <div className="h-6 bg-gray-200 rounded-lg mb-2"></div>
+    </div>  ) : (
+      <Card className=" max-w-[12rem] md:max-w-[15rem] lg:max-w-[17rem] max-h-[28rem] md:max-h-[25rem] lg:max-h-[28rem] overflow-hidden hover:border hover:border-5 hover:shadow-2xl  hover:border-indigo-700 border">
         <CardHeader
           floated={false}
           shadow={false}
@@ -143,7 +156,7 @@ export function CardDefault({ data, Carid, refetch }) {
               <Typography
                 variant="h5"
                 color="blue-gray"
-                className="mb-2"
+                className="mb-2  text-base md:text-lg lg:text-xl"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -154,21 +167,21 @@ export function CardDefault({ data, Carid, refetch }) {
            
 
 
-            <p className="text-xs font-medium uppercase flex space-x-2"> {/* Use space-x-2 for horizontal spacing */}
-  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
-    <DriveEtaIcon className="mr-1"  style={{ color: "#6EC207" }}/> {/* KM Driven Icon */}
+              <p className=" sm:text-[0.400rem] md:text-[0.580rem] lg:text-[0.666rem] font-medium uppercase flex space-x-0 flex-wrap">
+              <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans] ">
+    <DriveEtaIcon className=" text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]"  style={{ color: "#6EC207"  }}/> {/* KM Driven Icon */}
     {data.kmDriven} KM
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
-    <LocalGasStationIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
+  <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans]">
+    <LocalGasStationIcon className=" text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]h-2 w-2 sm:h-1 sm:w-1 md:h-2 md:w-2 lg:h-3 lg:w-3" style={{ color: "#6EC207" }} /> {/* Fuel Type Icon */}
     {data.fuelType}
   </span>
-  <span className="flex items-center p-[5px] rounded-sm text-black font-[sourceSans]">
-    <TransmissionIcon className="mr-1" style={{ color: "#6EC207" }} /> {/* Transmission Icon */}
+  <span className="flex items-center p-[1px] rounded-sm text-black font-[sourceSans]">
+    <TransmissionIcon className="text-[0.9rem] sm:text-[0.5rem] md:text-[0.7rem] lg:text-[0.8rem] transform scale-[0.6] sm:scale-[0.9] md:scale-[0.7] lg:scale-[0.9]" style={{ color: "#6EC207"  }} /> {/* Transmission Icon */}
     {data.transmission}
   </span>
 </p>
-            <Typography variant="h6" className="font-bold text-blue-gray-900 text-2xl ">
+            <Typography variant="h6" className="font-bold text-blue-gray-900  text-lg md:text-xl ">
               ₹ {data.price}
             </Typography>
             {/* <Link to={`/carlist/cardetails/${data.carId}`}>
@@ -178,13 +191,13 @@ export function CardDefault({ data, Carid, refetch }) {
           </Link> */}
            <Link to={`/carlist/cardetails/${data.carId}`}>
           {" "}
-          <Typography  variant="h6"  className="mb-2 mt-2"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
+          <Typography  variant="h6"  className="mb-2 mt-2  text-sm md:text-base"  style={{ display: 'flex', alignItems: 'center', color: "green" }}>
             View Car Details  <FaArrowRight style={{ color: 'green', fontSize: '15px' }} />
           </Typography>
           </Link>
             <hr />
 
-              <div className="flex align-bottom items-baseline gap-3 ">
+              <div className="flex align-bottom items-baseline gap-3    text-sm md:text-base text-gray-700 ">
               {/* <Typography variant="h10" color="blue-gray" className="mb-2">
               <CheckCircle style={{ color: 'green' }}/>  {data.title}
             </Typography> */}
@@ -197,6 +210,7 @@ export function CardDefault({ data, Carid, refetch }) {
          
         </CardBody>
       </Card>
+      )}
     </div>
   );
 }

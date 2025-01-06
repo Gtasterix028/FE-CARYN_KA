@@ -159,7 +159,7 @@ import cartechlogo2 from "/cars/cartechlogo2.png";
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: '#19376D', color: '#fff', p: 4, mt: 'auto' }}>
+    <Box sx={{ bgcolor: '#19376D', color: '#fff', p: 4, mt: 'auto' }} >
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={3}>
           <Box display="flex" alignItems="center">

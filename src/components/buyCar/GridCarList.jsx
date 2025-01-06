@@ -179,38 +179,43 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 import { FiLoader } from "react-icons/fi"; // Spinner icon
 
-const GridCarList = ({ data, error, refetch, isLoading,isFetching,  }) => {
+const GridCarList = ({ data, error, refetch, isLoading,isFetching, pageNO }) => {
   const [posts, setPosts] = useState([]);
 
 
 
-  // useEffect(() => {
-  //   if (data?.list && Array.isArray(data.list)) {
-  //           console.log("Appending cars in GridCarList component:", data.list);
-
-  //     setPosts((prevPosts) => {
-  //       // Merge only unique car data (avoid duplicates)
-  //       const newPosts = data.list.filter(
-  //         (car) => !prevPosts.some((prevCar) => prevCar.carId === car.carId)
-  //       );
-  //       return [...prevPosts, ...newPosts];
-  //     });
-  //   }
-  // }, [data]);
-
   useEffect(() => {
     if (data?.list && Array.isArray(data.list)) {
-      // Append new data with a slight delay
-      setTimeout(() => {
-        setPosts((prevPosts) => {
-          const newPosts = data.list.filter(
-            (car) => !prevPosts.some((prevCar) => prevCar.carId === car.carId)
-          );
-          return [...prevPosts, ...newPosts];
-        });
-      }, 500); // Delay to simulate smooth transition
+            console.log("Appending cars in GridCarList component:", data.list);
+console.log("pageNo............."+pageNO)
+      setPosts((prevPosts) => {
+
+        if (pageNO === 1) {
+          return data.list; // Replace with fresh data
+        }
+  
+        // Merge only unique car data (avoid duplicates)
+        const newPosts = data.list.filter(
+          (car) => !prevPosts.some((prevCar) => prevCar.carId === car.carId)
+        );
+        return [...prevPosts, ...newPosts];
+      });
     }
-  }, [data]);
+  }, [data,pageNO]);
+
+  // useEffect(() => {
+  //   if (data?.list && Array.isArray(data.list)) {
+  //     // Append new data with a slight delay
+  //     setTimeout(() => {
+  //       setPosts((prevPosts) => {
+  //         const newPosts = data.list.filter(
+  //           (car) => !prevPosts.some((prevCar) => prevCar.carId === car.carId)
+  //         );
+  //         return [...prevPosts, ...newPosts];
+  //       });
+  //     }, 500); // Delay to simulate smooth transition
+  //   }
+  // }, [data]);
   
 
   const renderContent = () => {
@@ -236,7 +241,7 @@ const GridCarList = ({ data, error, refetch, isLoading,isFetching,  }) => {
           {posts.map((items) => (
             <div key={items.carId}>
               <div className="flex">
-                <CardDefault data={items} Carid={items.carId} refetch={refetch} />
+                <CardDefault data={items} Carid={items.carId} refetch={refetch} isLoading={isLoading}/>
               </div>
             </div>
           ))}
@@ -266,6 +271,8 @@ GridCarList.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isFetching: PropTypes.bool.isRequired,
   onLoadMore: PropTypes.func.isRequired,
+  pageNO: PropTypes.func.isRequired,
+
 };
 
 export default GridCarList;

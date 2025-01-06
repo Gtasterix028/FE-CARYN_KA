@@ -993,8 +993,8 @@ const FilterCars = ({ setUrlState }) => {
   };
 
   return (
-    <div className="border-2 shadow-lg rounded-lg m-2  fixed  ">
-      <div className="flex justify-end mr-5 ">
+<div className="border-2 shadow-lg rounded-lg m-2 sticky top-[100px] bottom-[50px] w-full md:w-[300px] ">
+<div className="flex justify-end mr-5 ">
         <button
           type="button"
           className="md:hidden -mt-10 text-black font-bold flex hover:rounded-2xl hover:shadow-2xl "
@@ -1008,7 +1008,7 @@ const FilterCars = ({ setUrlState }) => {
       </div>
 
       <Card className={`p-4 ${showFilters ? "block" : "hidden "} md:block`}>
-        <div className="space-y-4">
+        <div className="space-y-4 overflow-y-auto max-h-[calc(100vh-150px)] no-scrollbar">
           <form onSubmit={submitHandle}>
             <div>
               <p className="font-bold mb-5 text-xl text-indigo-400">Filters</p>
